@@ -2,12 +2,4 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from 'views/Root';
 
-import { Provider } from 'react-redux';
-import { store } from 'state';
-
-ReactDOM.render(
-  <Provider store={store}>
-    <Root />
-  </Provider>,
-  document.getElementById('root'),
-);
+ReactDOM.render(<Root />, document.getElementById('root'));
