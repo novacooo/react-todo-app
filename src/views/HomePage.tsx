@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { actionCreators, StateType } from 'state';
 import { lightTheme, darkTheme } from 'theme';
 import { useThemeDetector } from 'hooks';
+import { toggleTransitionClass } from 'helpers';
 
 const Container = styled.div`
   display: flex;
@@ -48,11 +49,13 @@ const HomePage = (): JSX.Element => {
   const { switchTheme } = bindActionCreators(actionCreators, dispatch);
 
   const changeTheme = () => {
-    if (theme.mode == 'light') switchTheme(darkTheme);
-    else switchTheme(lightTheme);
+    if (theme.mode == 'light') {
+      switchTheme(darkTheme);
+    } else {
+      switchTheme(lightTheme);
+    }
 
-    document.documentElement.classList.add('transition');
-    setTimeout(() => document.documentElement.classList.remove('transition'), 200);
+    toggleTransitionClass();
   };
 
   return (

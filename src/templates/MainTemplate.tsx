@@ -7,32 +7,28 @@ import { actionCreators, StateType } from 'state';
 import { useThemeDetector } from 'hooks';
 import GlobalStyle from 'theme/GlobalStyle';
 import { lightTheme, darkTheme } from 'theme';
+import { toggleTransitionClass } from 'helpers';
 
 interface IProps extends RouteComponentProps {
   children: JSX.Element;
 }
 
 const MainTemplate = ({ children }: IProps) => {
-  const dispatch = useDispatch();
   const theme = useSelector((state: StateType) => state.theme);
   const isSystemDarkTheme = useThemeDetector();
+  const dispatch = useDispatch();
 
   const { switchTheme } = bindActionCreators(actionCreators, dispatch);
 
   useEffect(() => {
     switchTheme(isSystemDarkTheme ? darkTheme : lightTheme);
-
-    const htmlClassList = document.documentElement.classList;
-    htmlClassList.add('transition');
-    setTimeout(() => htmlClassList.remove('transition'), 200);
+    toggleTransitionClass();
   }, [isSystemDarkTheme]);
 
   return (
     <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        {children}
-      </ThemeProvider>
+      <GlobalStyle />
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </>
   );
 };

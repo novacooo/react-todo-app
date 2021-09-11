@@ -1,11 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
+import { THEME_TRANSITION_TIME, THEME_TRANSITION_CLASS } from 'app-constants';
 
 const GlobalStyle = createGlobalStyle`
-  html.transition,
-  html.transition *,
-  html.transition *:before,
-  html.transition *:after {
-    transition: all 200ms !important;
+  html.${THEME_TRANSITION_CLASS},
+  html.${THEME_TRANSITION_CLASS} *,
+  html.${THEME_TRANSITION_CLASS} *:before,
+  html.${THEME_TRANSITION_CLASS} *:after {
+    transition: all ${THEME_TRANSITION_TIME}ms !important;
     transition-delay: 0 !important;
   }
 
