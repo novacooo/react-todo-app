@@ -3,9 +3,12 @@ import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 import { actionCreators, StateType } from 'state';
-import { lightTheme, darkTheme } from 'theme';
-import { useThemeDetector } from 'hooks';
+import themes from 'theme';
 import { toggleTransitionClass } from 'helpers';
+
+interface IColorButtonProps {
+  bgColor: string;
+}
 
 const Container = styled.div`
   display: flex;
@@ -17,52 +20,74 @@ const Container = styled.div`
 `;
 
 const Header = styled.h1`
-  margin: 0;
-  font-size: 2.8rem;
-  font-weight: 600;
+  font-size: 3.2rem;
   color: ${({ theme }) => theme.MAIN};
 `;
 
-const Paragraph = styled.p`
-  margin: 20px 0 0 0;
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: hsl(0, 0%, 60%);
-`;
-
-const Link = styled.a`
-  margin: 20px 0 0 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: hsl(0, 0%, 40%);
+const Button = styled.button`
+  height: 4rem;
+  border: 2px solid #a8a8a8;
+  border-radius: 2rem;
+  padding: 0 2rem;
 
   &:hover {
-    color: hsl(0, 0%, 80%);
+    cursor: pointer;
+  }
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  margin-top: 2rem;
+`;
+
+const ColorButton = styled.button<IColorButtonProps>`
+  margin-right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: ${({ bgColor }) => bgColor};
+  border: 2px solid #a8a8a8;
+  border-radius: 50%;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 `;
 
 const HomePage = (): JSX.Element => {
   const dispatch = useDispatch();
   const theme = useSelector((state: StateType) => state.theme);
-  const isSystemDarkTheme = useThemeDetector();
 
   const { switchTheme } = bindActionCreators(actionCreators, dispatch);
 
-  const changeTheme = () => {
-    if (theme.mode == 'light') {
-      switchTheme(darkTheme);
-    } else {
-      switchTheme(lightTheme);
-    }
+  const toggleTheme = () => {
+    const { mode, color } = theme;
 
+    if (mode == 'light') switchTheme(themes.dark[color]);
+    else switchTheme(themes.light[color]);
+
+    toggleTransitionClass();
+  };
+
+  const changeThemeColor = (color: 'blue' | 'yellow' | 'violet') => {
+    const { mode } = theme;
+
+    switchTheme(themes[mode][color]);
     toggleTransitionClass();
   };
 
   return (
     <Container>
-      <Header onClick={changeTheme}>{isSystemDarkTheme ? 'dark' : 'light'}</Header>
-      <Paragraph>app is under development</Paragraph>
-      <Link href="..">&lt;- main page</Link>
+      <Header>todo-app</Header>
+      <Button onClick={toggleTheme}>toggle theme</Button>
+      <ButtonsContainer>
+        <ColorButton bgColor="blue" onClick={() => changeThemeColor('blue')} />
+        <ColorButton bgColor="yellow" onClick={() => changeThemeColor('yellow')} />
+        <ColorButton bgColor="violet" onClick={() => changeThemeColor('violet')} />
+      </ButtonsContainer>
     </Container>
   );
 };

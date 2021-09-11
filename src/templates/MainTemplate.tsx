@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { actionCreators, StateType } from 'state';
 import { useThemeDetector } from 'hooks';
 import GlobalStyle from 'theme/GlobalStyle';
-import { lightTheme, darkTheme } from 'theme';
+import themes from 'theme';
 import { toggleTransitionClass } from 'helpers';
 
 interface IProps extends RouteComponentProps {
@@ -21,7 +21,7 @@ const MainTemplate = ({ children }: IProps) => {
   const { switchTheme } = bindActionCreators(actionCreators, dispatch);
 
   useEffect(() => {
-    switchTheme(isSystemDarkTheme ? darkTheme : lightTheme);
+    switchTheme(isSystemDarkTheme ? themes.dark.blue : themes.light.blue);
     toggleTransitionClass();
   }, [isSystemDarkTheme]);
 

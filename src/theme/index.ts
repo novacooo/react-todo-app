@@ -1,20 +1,23 @@
-export interface IThemeType {
-  mode: 'light' | 'dark';
+import blueDark from './dark/blueDark';
+import violetDark from './dark/violetDark';
+import yellowDark from './dark/yellowDark';
+import blueLight from './light/blueLight';
+import violetLight from './light/violetLight';
+import yellowLight from './light/yellowLight';
 
-  MAIN: string;
-  BG: string;
-}
+export * from './IThemeType';
 
-export const lightTheme: IThemeType = {
-  mode: 'light',
-
-  MAIN: 'hsl(148, 84%, 20%)',
-  BG: 'hsl(0, 0%, 100%)',
+const themes = {
+  light: {
+    blue: blueLight,
+    yellow: yellowLight,
+    violet: violetLight,
+  },
+  dark: {
+    blue: blueDark,
+    yellow: yellowDark,
+    violet: violetDark,
+  },
 };
 
-export const darkTheme: IThemeType = {
-  mode: 'dark',
-
-  MAIN: 'hsl(152, 69%, 70%)',
-  BG: 'hsl(0, 0%, 10%)',
-};
+export default themes;
