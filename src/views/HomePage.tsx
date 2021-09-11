@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 import { actionCreators, StateType } from 'state';
-import themes from 'theme';
+import { themes } from 'theme';
 import { toggleTransitionClass } from 'helpers';
 
 interface IColorButtonProps {

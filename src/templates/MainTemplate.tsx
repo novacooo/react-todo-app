@@ -6,7 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { actionCreators, StateType } from 'state';
 import { useThemeDetector } from 'hooks';
 import GlobalStyle from 'theme/GlobalStyle';
-import themes from 'theme';
+import { themes } from 'theme';
 import { toggleTransitionClass } from 'helpers';
 
 interface IProps extends RouteComponentProps {

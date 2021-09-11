@@ -1,6 +1,6 @@
 import { ActionType } from 'state/action-types';
 import { ISwitchThemeAction } from 'state/actions';
-import themes, { IThemeType } from 'theme';
+import { themes, IThemeType } from 'theme';
 
 const initialState: IThemeType = themes.light.blue;
 
