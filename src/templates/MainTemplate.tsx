@@ -21,7 +21,10 @@ const MainTemplate = ({ children }: IProps) => {
   const { switchTheme } = bindActionCreators(actionCreators, dispatch);
 
   useEffect(() => {
-    switchTheme(isSystemDarkTheme ? themes.dark.blue : themes.light.blue);
+    const { light, dark } = themes;
+    const { color } = theme;
+
+    switchTheme(isSystemDarkTheme ? dark[color] : light[color]);
     toggleTransitionClass();
   }, [isSystemDarkTheme]);
 

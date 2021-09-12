@@ -3,8 +3,14 @@ import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 import { actionCreators, StateType } from 'state';
-import { themes } from 'theme';
+import { ThemeColorType, themes } from 'theme';
 import { toggleTransitionClass } from 'helpers';
+import {
+  THEME_COLOR_BLUE,
+  THEME_COLOR_VIOLET,
+  THEME_COLOR_YELLOW,
+  THEME_MODE_LIGHT,
+} from 'app-constants';
 
 interface IColorButtonProps {
   bgColor: string;
@@ -66,13 +72,13 @@ const HomePage = (): JSX.Element => {
   const toggleTheme = () => {
     const { mode, color } = theme;
 
-    if (mode == 'light') switchTheme(themes.dark[color]);
+    if (mode == THEME_MODE_LIGHT) switchTheme(themes.dark[color]);
     else switchTheme(themes.light[color]);
 
     toggleTransitionClass();
   };
 
-  const changeThemeColor = (color: 'blue' | 'yellow' | 'violet') => {
+  const changeThemeColor = (color: ThemeColorType) => {
     const { mode } = theme;
 
     switchTheme(themes[mode][color]);
@@ -84,9 +90,9 @@ const HomePage = (): JSX.Element => {
       <Header>todo-app</Header>
       <Button onClick={toggleTheme}>toggle theme</Button>
       <ButtonsContainer>
-        <ColorButton bgColor="blue" onClick={() => changeThemeColor('blue')} />
-        <ColorButton bgColor="yellow" onClick={() => changeThemeColor('yellow')} />
-        <ColorButton bgColor="violet" onClick={() => changeThemeColor('violet')} />
+        <ColorButton bgColor="blue" onClick={() => changeThemeColor(THEME_COLOR_BLUE)} />
+        <ColorButton bgColor="yellow" onClick={() => changeThemeColor(THEME_COLOR_YELLOW)} />
+        <ColorButton bgColor="violet" onClick={() => changeThemeColor(THEME_COLOR_VIOLET)} />
       </ButtonsContainer>
     </Container>
   );
