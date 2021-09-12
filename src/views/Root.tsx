@@ -7,13 +7,16 @@ import MainTemplate from 'templates/MainTemplate';
 import HomePage from 'views/HomePage';
 import { routes } from 'routes';
 import LoginPage from './LoginPage';
+import DeadlinePage from './DeadlinePage';
+import DonePage from './DonePage';
 
 const Root = (): JSX.Element => (
   <>
     <Helmet>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap"
         rel="stylesheet"
       />
     </Helmet>
@@ -23,6 +26,8 @@ const Root = (): JSX.Element => (
           <Switch>
             <Route exact path={routes.home} component={HomePage} />
             <Route exact path={routes.login} component={LoginPage} />
+            <Route exact path={routes.deadline} component={DeadlinePage} />
+            <Route exact path={routes.done} component={DonePage} />
           </Switch>
         </MainTemplate>
       </HashRouter>

@@ -11,6 +11,9 @@ import { ReactComponent as DoneIcon } from 'assets/icons/done.svg';
 import { ReactComponent as DoneFilledIcon } from 'assets/icons/done_filled.svg';
 import { ReactComponent as PaletteIcon } from 'assets/icons/palette.svg';
 import { ReactComponent as LightModeIcon } from 'assets/icons/light_mode.svg';
+import { fontSettings } from 'theme/fontSettings';
+import { NavLink, useLocation } from 'react-router-dom';
+import { routes } from 'routes';
 
 const Container = styled.div`
   display: flex;
@@ -60,7 +63,7 @@ const LoginButton = styled.button`
   border: none;
   border-radius: ${BORDER_RADIUS};
   color: ${({ theme }) => theme.MAIN};
-  font-weight: 600;
+  font-weight: ${fontSettings.weights.semiBold};
 
   &:hover {
     cursor: pointer;
@@ -68,18 +71,38 @@ const LoginButton = styled.button`
 `;
 
 const TopBar = (): JSX.Element => {
+  const { pathname } = useLocation();
+
   return (
     <Container>
       <StyledAppLogo />
       <ButtonsContainer>
-        <IconButton active icon={HomeIcon} iconActive={HomeFilledIcon} />
-        <IconButton icon={ClockIcon} iconActive={ClockFilledIcon} />
-        <IconButton icon={DoneIcon} iconActive={DoneFilledIcon} />
+        <NavLink to={routes.home}>
+          <IconButton
+            active={pathname === routes.home ? true : false}
+            icon={HomeIcon}
+            iconActive={HomeFilledIcon}
+          />
+        </NavLink>
+        <NavLink to={routes.deadline}>
+          <IconButton
+            active={pathname === routes.deadline ? true : false}
+            icon={ClockIcon}
+            iconActive={ClockFilledIcon}
+          />
+        </NavLink>
+        <NavLink to={routes.done}>
+          <IconButton
+            active={pathname === routes.done ? true : false}
+            icon={DoneIcon}
+            iconActive={DoneFilledIcon}
+          />
+        </NavLink>
       </ButtonsContainer>
       <RightContainer>
         <ButtonsContainer>
           <IconButton icon={PaletteIcon} />
-          <IconButton icon={LightModeIcon} size="25px" />
+          <IconButton icon={LightModeIcon} iconSize="25px" />
         </ButtonsContainer>
         <LoginButton>Login</LoginButton>
       </RightContainer>

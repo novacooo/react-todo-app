@@ -1,4 +1,3 @@
-import TopBar from 'components/organisms/TopBar/TopBar';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { routes } from 'routes';
@@ -26,13 +25,10 @@ const StyledLink = styled(Link)`
 
 const LoginPage = (): JSX.Element => {
   return (
-    <>
-      <TopBar />
-      <Container>
-        <Header>LoginPage</Header>
-        <StyledLink to={routes.home}>{'<'}- Home</StyledLink>
-      </Container>
-    </>
+    <Container>
+      <Header>LoginPage</Header>
+      <StyledLink to={routes.home}>{'<'}- Home</StyledLink>
+    </Container>
   );
 };
 
