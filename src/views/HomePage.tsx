@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 import { actionCreators, StateType } from 'state';
-import { ThemeColorType, themes } from 'theme';
+import { ThemeColorType, appThemes } from 'theme';
 import { toggleTransitionClass } from 'helpers';
 import {
   THEME_COLOR_BLUE,
   THEME_COLOR_VIOLET,
-  THEME_COLOR_YELLOW,
+  THEME_COLOR_ORANGE,
   THEME_MODE_LIGHT,
 } from 'app-constants';
 
@@ -22,7 +22,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: ${({ theme }) => theme.BG};
+  background-color: ${({ theme }) => theme.BG_PRIMARY};
 `;
 
 const Header = styled.h1`
@@ -72,8 +72,8 @@ const HomePage = (): JSX.Element => {
   const toggleTheme = () => {
     const { mode, color } = theme;
 
-    if (mode == THEME_MODE_LIGHT) switchTheme(themes.dark[color]);
-    else switchTheme(themes.light[color]);
+    if (mode == THEME_MODE_LIGHT) switchTheme(appThemes.dark[color]);
+    else switchTheme(appThemes.light[color]);
 
     toggleTransitionClass();
   };
@@ -81,7 +81,7 @@ const HomePage = (): JSX.Element => {
   const changeThemeColor = (color: ThemeColorType) => {
     const { mode } = theme;
 
-    switchTheme(themes[mode][color]);
+    switchTheme(appThemes[mode][color]);
     toggleTransitionClass();
   };
 
@@ -90,9 +90,18 @@ const HomePage = (): JSX.Element => {
       <Header>todo-app</Header>
       <Button onClick={toggleTheme}>toggle theme</Button>
       <ButtonsContainer>
-        <ColorButton bgColor="blue" onClick={() => changeThemeColor(THEME_COLOR_BLUE)} />
-        <ColorButton bgColor="yellow" onClick={() => changeThemeColor(THEME_COLOR_YELLOW)} />
-        <ColorButton bgColor="violet" onClick={() => changeThemeColor(THEME_COLOR_VIOLET)} />
+        <ColorButton
+          bgColor={appThemes[theme.mode][THEME_COLOR_BLUE].MAIN}
+          onClick={() => changeThemeColor(THEME_COLOR_BLUE)}
+        />
+        <ColorButton
+          bgColor={appThemes[theme.mode][THEME_COLOR_ORANGE].MAIN}
+          onClick={() => changeThemeColor(THEME_COLOR_ORANGE)}
+        />
+        <ColorButton
+          bgColor={appThemes[theme.mode][THEME_COLOR_VIOLET].MAIN}
+          onClick={() => changeThemeColor(THEME_COLOR_VIOLET)}
+        />
       </ButtonsContainer>
     </Container>
   );

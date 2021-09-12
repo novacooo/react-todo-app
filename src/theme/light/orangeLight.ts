@@ -1,15 +1,15 @@
-import { THEME_COLOR_BLUE, THEME_MODE_LIGHT } from 'app-constants';
+import { THEME_COLOR_ORANGE, THEME_MODE_LIGHT } from 'app-constants';
 import { IThemeType } from 'theme';
 
-const blueLight: IThemeType = {
+const orangeLight: IThemeType = {
   mode: THEME_MODE_LIGHT,
-  color: THEME_COLOR_BLUE,
+  color: THEME_COLOR_ORANGE,
 
-  MAIN: 'hsl(227, 59%, 52%)',
-  MAIN_BORDER: 'hsl(227, 59%, 48%)',
-  MAIN_TRANSPARENT: 'hsla(227, 59%, 52%, 0.12)',
+  MAIN: 'hsl(29, 83%, 51%)',
+  MAIN_BORDER: 'hsl(29, 77%, 46%)',
+  MAIN_TRANSPARENT: 'hsla(29, 83%, 51%, 0.12)',
   MAIN_ITEMS: 'hsl(0, 0%, 100%)',
-  MAIN_PATTERN: 'hsl(223, 75%, 93%)',
+  MAIN_PATTERN: 'hsl(29, 80%, 92%)',
 
   BG_PRIMARY: 'hsl(0, 0%, 100%)',
   BG_SECONDARY: 'hsl(0, 0%, 96%)',
@@ -32,4 +32,4 @@ const blueLight: IThemeType = {
   RED: 'hsl(360, 90%, 61%)',
 };
 
-export default blueLight;
+export default orangeLight;

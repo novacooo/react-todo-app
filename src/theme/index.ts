@@ -1,2 +1,2 @@
 export * from './IThemeType';
-export * from './themes';
+export * from './appThemes';
