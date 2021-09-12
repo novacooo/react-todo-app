@@ -27,6 +27,7 @@ const Container = styled.div`
 `;
 
 const Header = styled.h1`
+  margin-bottom: 20px;
   font-size: 3.2rem;
   color: ${({ theme }) => theme.MAIN};
 `;

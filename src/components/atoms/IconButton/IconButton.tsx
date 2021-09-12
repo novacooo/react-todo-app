@@ -9,6 +9,7 @@ interface IContainer {
 interface IIconButton extends IContainer {
   icon: React.FC;
   iconActive?: React.FC;
+  size?: string;
 }
 
 const Container = styled.button<IContainer>`
@@ -35,16 +36,21 @@ const Container = styled.button<IContainer>`
     `}
 `;
 
-const IconButton = ({ icon, active = false, iconActive = icon }: IIconButton): JSX.Element => {
+const IconButton = ({
+  icon,
+  active = false,
+  iconActive = icon,
+  size = '22px',
+}: IIconButton): JSX.Element => {
   const StyledIcon = styled(icon)`
-    width: 22px;
-    height: 22px;
+    width: ${size};
+    height: ${size};
     fill: ${({ theme }) => theme.MAIN_ITEMS};
   `;
 
   const StyledIconActive = styled(iconActive)`
-    width: 22px;
-    height: 22px;
+    width: ${size};
+    height: ${size};
     fill: ${({ theme }) => theme.MAIN};
   `;
 
