@@ -30,8 +30,10 @@ const MainTemplate = ({ children }: IProps) => {
 
   return (
     <>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        {children}
+      </ThemeProvider>
     </>
   );
 };

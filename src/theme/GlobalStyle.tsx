@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { THEME_TRANSITION_TIME, THEME_TRANSITION_CLASS } from 'app-constants';
+import { THEME_TRANSITION_TIME, THEME_TRANSITION_CLASS } from 'app_constants';
 
 const GlobalStyle = createGlobalStyle`
   html.${THEME_TRANSITION_CLASS},
@@ -25,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: ${({ theme }) => theme.BG_PRIMARY};
     font-size: 1.6rem;
     font-family: 'Montserrat', sans-serif;
 

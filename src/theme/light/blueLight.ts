@@ -1,4 +1,4 @@
-import { THEME_COLOR_BLUE, THEME_MODE_LIGHT } from 'app-constants';
+import { THEME_COLOR_BLUE, THEME_MODE_LIGHT } from 'app_constants';
 import { IThemeType } from 'theme';
 
 const blueLight: IThemeType = {

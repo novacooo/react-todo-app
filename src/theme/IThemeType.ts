@@ -4,7 +4,7 @@ import {
   THEME_COLOR_BLUE,
   THEME_COLOR_ORANGE,
   THEME_COLOR_VIOLET,
-} from 'app-constants';
+} from 'app_constants';
 
 export type ThemeModeType = typeof THEME_MODE_LIGHT | typeof THEME_MODE_DARK;
 

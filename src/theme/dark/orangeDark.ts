@@ -1,4 +1,4 @@
-import { THEME_COLOR_ORANGE, THEME_MODE_DARK } from 'app-constants';
+import { THEME_COLOR_ORANGE, THEME_MODE_DARK } from 'app_constants';
 import { IThemeType } from 'theme';
 
 const orangeDark: IThemeType = {

@@ -10,7 +10,9 @@ import {
   THEME_COLOR_VIOLET,
   THEME_COLOR_ORANGE,
   THEME_MODE_LIGHT,
-} from 'app-constants';
+} from 'app_constants';
+import { Link } from 'react-router-dom';
+import { routes } from 'routes';
 
 interface IColorButtonProps {
   bgColor: string;
@@ -22,7 +24,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-  background-color: ${({ theme }) => theme.BG_PRIMARY};
 `;
 
 const Header = styled.h1`
@@ -61,6 +62,13 @@ const ColorButton = styled.button<IColorButtonProps>`
   &:hover {
     cursor: pointer;
   }
+`;
+
+const StyledLink = styled(Link)`
+  display: block;
+  margin-top: 2rem;
+  font-size: 600;
+  color: ${({ theme }) => theme.TEXT_SECONDARY};
 `;
 
 const HomePage = (): JSX.Element => {
@@ -103,6 +111,7 @@ const HomePage = (): JSX.Element => {
           onClick={() => changeThemeColor(THEME_COLOR_VIOLET)}
         />
       </ButtonsContainer>
+      <StyledLink to={routes.login}>LoginPage -{'>'}</StyledLink>
     </Container>
   );
 };

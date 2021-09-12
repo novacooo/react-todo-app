@@ -4,7 +4,7 @@ import {
   THEME_COLOR_BLUE,
   THEME_COLOR_ORANGE,
   THEME_COLOR_VIOLET,
-} from 'app-constants';
+} from 'app_constants';
 import blueDark from './dark/blueDark';
 import violetDark from './dark/violetDark';
 import orangeDark from './dark/orangeDark';
