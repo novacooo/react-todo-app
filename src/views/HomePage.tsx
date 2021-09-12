@@ -87,7 +87,7 @@ const HomePage = (): JSX.Element => {
 
   return (
     <Container>
-      <Header>todo-app</Header>
+      <Header>react-todo-app</Header>
       <Button onClick={toggleTheme}>toggle theme</Button>
       <ButtonsContainer>
         <ColorButton

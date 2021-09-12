@@ -5,6 +5,8 @@ import { Helmet } from 'react-helmet';
 import { store } from 'state';
 import MainTemplate from 'templates/MainTemplate';
 import HomePage from 'views/HomePage';
+import { routes } from 'routes';
+import LoginPage from './LoginPage';
 
 const Root = (): JSX.Element => (
   <>
@@ -19,7 +21,8 @@ const Root = (): JSX.Element => (
       <BrowserRouter>
         <MainTemplate>
           <Switch>
-            <Route exact path="/react-todo-app" component={HomePage} />
+            <Route exact path={routes.home} component={HomePage} />
+            <Route exact path={routes.login} component={LoginPage} />
           </Switch>
         </MainTemplate>
       </BrowserRouter>
