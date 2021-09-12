@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { store } from 'state';
@@ -18,14 +18,14 @@ const Root = (): JSX.Element => (
       />
     </Helmet>
     <Provider store={store}>
-      <BrowserRouter>
+      <HashRouter basename="/">
         <MainTemplate>
           <Switch>
             <Route exact path={routes.home} component={HomePage} />
             <Route exact path={routes.login} component={LoginPage} />
           </Switch>
         </MainTemplate>
-      </BrowserRouter>
+      </HashRouter>
     </Provider>
   </>
 );
