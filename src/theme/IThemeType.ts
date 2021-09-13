@@ -4,9 +4,13 @@ import {
   THEME_COLOR_BLUE,
   THEME_COLOR_ORANGE,
   THEME_COLOR_VIOLET,
+  THEME_MODE_AUTO,
 } from 'app_constants';
 
-export type ThemeModeType = typeof THEME_MODE_LIGHT | typeof THEME_MODE_DARK;
+export type ThemeModeType =
+  | typeof THEME_MODE_AUTO
+  | typeof THEME_MODE_LIGHT
+  | typeof THEME_MODE_DARK;
 
 export type ThemeColorType =
   | typeof THEME_COLOR_BLUE
@@ -14,7 +18,7 @@ export type ThemeColorType =
   | typeof THEME_COLOR_VIOLET;
 
 export interface IThemeType {
-  mode: ThemeModeType;
+  mode: typeof THEME_MODE_LIGHT | typeof THEME_MODE_DARK;
   color: ThemeColorType;
 
   MAIN: string;

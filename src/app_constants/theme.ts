@@ -1,5 +1,6 @@
 export const THEME_TRANSITION_CLASS = 'transition';
 export const THEME_TRANSITION_TIME = 300;
+export const THEME_MODE_AUTO = 'auto';
 export const THEME_MODE_LIGHT = 'light';
 export const THEME_MODE_DARK = 'dark';
 export const THEME_COLOR_BLUE = 'blue';

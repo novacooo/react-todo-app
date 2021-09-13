@@ -18,6 +18,7 @@ const Container = styled.button<IContainer>`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   width: 48px;
   height: 48px;
   border: none;
