@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
     transition-delay: 0 !important;
   }
 
+  html.${THEME_TRANSITION_CLASS} svg {
+    transition: none !important;
+  }
+
   *, *::before, *::after {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;

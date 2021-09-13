@@ -30,6 +30,9 @@ const violetLight: IThemeType = {
   GREEN: 'hsl(126, 75%, 36%)',
   YELLOW: 'hsl(40, 88%, 61%)',
   RED: 'hsl(360, 90%, 61%)',
+
+  NOTE_SHADOW: '0px 5px 15px 0px hsla(0, 0%, 0%, 0.08)',
+  DIALOG_SHADOW: '0px 20px 60px 0px hsla(0, 0%, 0%, 0.22)',
 };
 
 export default violetLight;

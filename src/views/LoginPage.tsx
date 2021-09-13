@@ -1,33 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { routes } from 'routes';
 import styled from 'styled-components';
+import { fontSettings } from 'theme/fontSettings';
 
 const Container = styled.div`
+  padding-top: 250px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding-top: 250px;
 `;
 
-const Header = styled.h1`
-  font-size: 3.2rem;
-  color: ${({ theme }) => theme.MAIN};
+const StyledHeader = styled.h1`
+  color: ${({ theme }) => theme.TEXT_PRIMARY};
+  font-size: ${fontSettings.sizesDesktop.xl};
+  font-weight: ${fontSettings.weights.semiBold};
 `;
 
-const StyledLink = styled(Link)`
-  display: block;
-  margin-top: 2rem;
-  font-size: 600;
+const StyledNavLink = styled(NavLink)`
+  margin-top: 30px;
   color: ${({ theme }) => theme.TEXT_SECONDARY};
+  font-size: ${fontSettings.sizesDesktop.m};
+  font-weight: ${fontSettings.weights.medium};
 `;
 
 const LoginPage = (): JSX.Element => {
   return (
     <Container>
-      <Header>LoginPage</Header>
-      <StyledLink to={routes.home}>{'<'}- Home</StyledLink>
+      <StyledHeader>LoginPage</StyledHeader>
+      <StyledNavLink to={routes.home}>{'<'}- HomePage</StyledNavLink>
     </Container>
   );
 };

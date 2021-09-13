@@ -42,4 +42,7 @@ export interface IThemeType {
   GREEN: string;
   YELLOW: string;
   RED: string;
+
+  NOTE_SHADOW: string;
+  DIALOG_SHADOW: string;
 }

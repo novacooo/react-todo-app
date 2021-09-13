@@ -1,4 +1,4 @@
-import { BORDER_RADIUS } from 'app_constants';
+import { BORDER_RADIUS, TRANSITION_TIME } from 'app_constants';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -10,6 +10,7 @@ interface IIconButton extends IContainer {
   icon: React.FC;
   iconActive?: React.FC;
   iconSize?: string;
+  className?: string;
   onClick?: () => void;
 }
 
@@ -22,7 +23,7 @@ const Container = styled.button<IContainer>`
   border: none;
   border-radius: ${({ active }) => (active ? BORDER_RADIUS : '24px')};
   background-color: ${({ active, theme }) => (active ? theme.MAIN_ITEMS : 'transparent')};
-  transition: background-color 0.2s, border-radius 0.2s;
+  transition: background-color ${TRANSITION_TIME}, border-radius ${TRANSITION_TIME};
 
   &:hover {
     cursor: pointer;
@@ -42,22 +43,25 @@ const IconButton = ({
   active = false,
   iconActive = icon,
   iconSize: size = '22px',
+  className,
   onClick,
 }: IIconButton): JSX.Element => {
   const StyledIcon = styled(icon)`
     width: ${size};
     height: ${size};
     fill: ${({ theme }) => theme.MAIN_ITEMS};
+    transition: fill ${TRANSITION_TIME};
   `;
 
   const StyledIconActive = styled(iconActive)`
     width: ${size};
     height: ${size};
     fill: ${({ theme }) => theme.MAIN};
+    transition: fill ${TRANSITION_TIME};
   `;
 
   return (
-    <Container active={active} onClick={onClick}>
+    <Container active={active} onClick={onClick} className={className}>
       {active ? <StyledIconActive /> : <StyledIcon />}
     </Container>
   );

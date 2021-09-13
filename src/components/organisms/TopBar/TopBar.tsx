@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as AppLogo } from 'assets/logo/app_logo.svg';
-import { BORDER_RADIUS, MARGIN_SIDE_DESKTOP } from 'app_constants';
+import { BORDER_RADIUS, MARGIN_SIDE_DESKTOP, TRANSITION_TIME } from 'app_constants';
 import IconButton from 'components/atoms/IconButton/IconButton';
 import { ReactComponent as HomeIcon } from 'assets/icons/home.svg';
 import { ReactComponent as HomeFilledIcon } from 'assets/icons/home_filled.svg';
@@ -56,6 +56,44 @@ const RightContainer = styled.div`
   align-items: center;
 `;
 
+const PaletteContainer = styled.div`
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  padding-top: 3px;
+  transform: translateX(-50%);
+  transition: visibility ${TRANSITION_TIME}, opacity ${TRANSITION_TIME};
+
+  &:hover {
+    visibility: visible;
+    opacity: 1;
+  }
+`;
+
+const Palette = styled.div`
+  width: 200px;
+  height: 100px;
+  background-color: ${({ theme }) => theme.BG_NOTE};
+  box-shadow: ${({ theme }) => theme.NOTE_SHADOW};
+  border-radius: ${BORDER_RADIUS};
+`;
+
+const PaletteButtonContainer = styled.div`
+  position: relative;
+  border-radius: 24px;
+  transition: border-radius ${TRANSITION_TIME};
+
+  &:hover {
+    border-radius: 24px 24px 0 0;
+
+    ${PaletteContainer} {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+`;
+
 const LoginButton = styled.button`
   margin-left: 30px;
   padding: 8px 24px;
@@ -101,7 +139,12 @@ const TopBar = (): JSX.Element => {
       </ButtonsContainer>
       <RightContainer>
         <ButtonsContainer>
-          <IconButton icon={PaletteIcon} />
+          <PaletteButtonContainer>
+            <IconButton icon={PaletteIcon} />
+            <PaletteContainer>
+              <Palette />
+            </PaletteContainer>
+          </PaletteButtonContainer>
           <IconButton icon={LightModeIcon} iconSize="25px" />
         </ButtonsContainer>
         <LoginButton>Login</LoginButton>
