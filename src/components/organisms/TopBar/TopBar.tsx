@@ -1,7 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as AppLogo } from 'assets/logo/app_logo.svg';
-import { BORDER_RADIUS, MARGIN_SIDE_DESKTOP, TRANSITION_TIME } from 'app_constants';
+import {
+  BORDER_RADIUS,
+  MARGIN_SIDE_DESKTOP,
+  THEME_COLOR_BLUE,
+  THEME_COLOR_ORANGE,
+  THEME_COLOR_VIOLET,
+  THEME_MODE_LIGHT,
+  TRANSITION_TIME,
+} from 'app_constants';
 import IconButton from 'components/atoms/IconButton/IconButton';
 import { ReactComponent as HomeIcon } from 'assets/icons/home.svg';
 import { ReactComponent as HomeFilledIcon } from 'assets/icons/home_filled.svg';
@@ -14,6 +22,12 @@ import { ReactComponent as LightModeIcon } from 'assets/icons/light_mode.svg';
 import { fontSettings } from 'theme/fontSettings';
 import { NavLink, useLocation } from 'react-router-dom';
 import { routes } from 'routes';
+import { toggleTransitionClass } from 'helpers';
+import { appThemes, ThemeColorType } from 'theme';
+import { actionCreators, StateType } from 'state';
+import { useDispatch, useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import ColorButton from 'components/atoms/ColorButton/ColorButton';
 
 const Container = styled.div`
   display: flex;
@@ -56,7 +70,7 @@ const RightContainer = styled.div`
   align-items: center;
 `;
 
-const PaletteContainer = styled.div`
+const PaletteHoverContainer = styled.div`
   visibility: hidden;
   opacity: 0;
   position: absolute;
@@ -71,12 +85,22 @@ const PaletteContainer = styled.div`
   }
 `;
 
-const Palette = styled.div`
-  width: 200px;
-  height: 100px;
+const PaletteContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 18px;
   background-color: ${({ theme }) => theme.BG_NOTE};
   box-shadow: ${({ theme }) => theme.NOTE_SHADOW};
   border-radius: ${BORDER_RADIUS};
+
+  > * {
+    margin-right: 8px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 `;
 
 const PaletteButtonContainer = styled.div`
@@ -87,7 +111,7 @@ const PaletteButtonContainer = styled.div`
   &:hover {
     border-radius: 24px 24px 0 0;
 
-    ${PaletteContainer} {
+    ${PaletteHoverContainer} {
       visibility: visible;
       opacity: 1;
     }
@@ -110,6 +134,26 @@ const LoginButton = styled.button`
 
 const TopBar = (): JSX.Element => {
   const { pathname } = useLocation();
+  const dispatch = useDispatch();
+  const theme = useSelector((state: StateType) => state.theme);
+
+  const { switchTheme } = bindActionCreators(actionCreators, dispatch);
+
+  const toggleTheme = () => {
+    const { mode, color } = theme;
+
+    if (mode == THEME_MODE_LIGHT) switchTheme(appThemes.dark[color]);
+    else switchTheme(appThemes.light[color]);
+
+    toggleTransitionClass();
+  };
+
+  const changeThemeColor = (color: ThemeColorType) => {
+    const { mode } = theme;
+
+    switchTheme(appThemes[mode][color]);
+    toggleTransitionClass();
+  };
 
   return (
     <Container>
@@ -141,11 +185,27 @@ const TopBar = (): JSX.Element => {
         <ButtonsContainer>
           <PaletteButtonContainer>
             <IconButton icon={PaletteIcon} />
-            <PaletteContainer>
-              <Palette />
-            </PaletteContainer>
+            <PaletteHoverContainer>
+              <PaletteContainer>
+                <ColorButton
+                  color={appThemes[theme.mode][THEME_COLOR_BLUE].MAIN}
+                  active={theme.color === THEME_COLOR_BLUE ? true : false}
+                  onClick={() => changeThemeColor(THEME_COLOR_BLUE)}
+                />
+                <ColorButton
+                  color={appThemes[theme.mode][THEME_COLOR_ORANGE].MAIN}
+                  active={theme.color === THEME_COLOR_ORANGE ? true : false}
+                  onClick={() => changeThemeColor(THEME_COLOR_ORANGE)}
+                />
+                <ColorButton
+                  color={appThemes[theme.mode][THEME_COLOR_VIOLET].MAIN}
+                  active={theme.color === THEME_COLOR_VIOLET ? true : false}
+                  onClick={() => changeThemeColor(THEME_COLOR_VIOLET)}
+                />
+              </PaletteContainer>
+            </PaletteHoverContainer>
           </PaletteButtonContainer>
-          <IconButton icon={LightModeIcon} iconSize="25px" />
+          <IconButton icon={LightModeIcon} iconSize={25} onClick={toggleTheme} />
         </ButtonsContainer>
         <LoginButton>Login</LoginButton>
       </RightContainer>

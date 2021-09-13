@@ -18,7 +18,7 @@ const violetLight: IThemeType = {
   BG_HOVER: 'hsla(0, 0%, 100%, 0.15)',
 
   BORDER: 'hsl(0, 0%, 90%)',
-  BORDER_HOVER: 'hsla(0, 0%, 100%, 0.15)',
+  BORDER_HOVER: 'hsl(0, 0%, 80%)',
 
   TEXT_PRIMARY: 'hsl(0, 0%, 7%)',
   TEXT_SECONDARY: 'hsl(0, 0%, 43%)',

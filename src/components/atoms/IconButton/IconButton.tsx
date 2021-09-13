@@ -9,7 +9,7 @@ interface IContainer {
 interface IIconButton extends IContainer {
   icon: React.FC;
   iconActive?: React.FC;
-  iconSize?: string;
+  iconSize?: number;
   className?: string;
   onClick?: () => void;
 }
@@ -42,26 +42,30 @@ const IconButton = ({
   icon,
   active = false,
   iconActive = icon,
-  iconSize: size = '22px',
+  iconSize = 22,
   className,
   onClick,
 }: IIconButton): JSX.Element => {
   const StyledIcon = styled(icon)`
-    width: ${size};
-    height: ${size};
+    width: ${iconSize}px;
+    height: ${iconSize}px;
     fill: ${({ theme }) => theme.MAIN_ITEMS};
     transition: fill ${TRANSITION_TIME};
   `;
 
   const StyledIconActive = styled(iconActive)`
-    width: ${size};
-    height: ${size};
+    width: ${iconSize}px;
+    height: ${iconSize}px;
     fill: ${({ theme }) => theme.MAIN};
     transition: fill ${TRANSITION_TIME};
   `;
 
+  const handleClick = (): void => {
+    if (onClick) onClick();
+  };
+
   return (
-    <Container active={active} onClick={onClick} className={className}>
+    <Container active={active} onClick={handleClick} className={className}>
       {active ? <StyledIconActive /> : <StyledIcon />}
     </Container>
   );
