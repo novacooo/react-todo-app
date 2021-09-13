@@ -1,4 +1,3 @@
-import TopBar from 'components/organisms/TopBar/TopBar';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { routes } from 'routes';
@@ -27,13 +26,10 @@ const StyledNavLink = styled(NavLink)`
 
 const DeadlinePage = (): JSX.Element => {
   return (
-    <>
-      <TopBar />
-      <Container>
-        <StyledHeader>DeadlinePage</StyledHeader>
-        <StyledNavLink to={routes.home}>{'<'}- HomePage</StyledNavLink>
-      </Container>
-    </>
+    <Container>
+      <StyledHeader>DeadlinePage</StyledHeader>
+      <StyledNavLink to={routes.home}>{'<'}- HomePage</StyledNavLink>
+    </Container>
   );
 };
 

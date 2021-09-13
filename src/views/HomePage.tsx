@@ -13,7 +13,6 @@ import {
 } from 'app_constants';
 import { Link } from 'react-router-dom';
 import { routes } from 'routes';
-import TopBar from 'components/organisms/TopBar/TopBar';
 
 interface IColorButtonProps {
   bgColor: string;
@@ -96,28 +95,25 @@ const HomePage = (): JSX.Element => {
   };
 
   return (
-    <>
-      <TopBar />
-      <Container>
-        <Header>react-todo-app</Header>
-        <Button onClick={toggleTheme}>toggle theme</Button>
-        <ButtonsContainer>
-          <ColorButton
-            bgColor={appThemes[theme.mode][THEME_COLOR_BLUE].MAIN}
-            onClick={() => changeThemeColor(THEME_COLOR_BLUE)}
-          />
-          <ColorButton
-            bgColor={appThemes[theme.mode][THEME_COLOR_ORANGE].MAIN}
-            onClick={() => changeThemeColor(THEME_COLOR_ORANGE)}
-          />
-          <ColorButton
-            bgColor={appThemes[theme.mode][THEME_COLOR_VIOLET].MAIN}
-            onClick={() => changeThemeColor(THEME_COLOR_VIOLET)}
-          />
-        </ButtonsContainer>
-        <StyledLink to={routes.login}>LoginPage -{'>'}</StyledLink>
-      </Container>
-    </>
+    <Container>
+      <Header>react-todo-app</Header>
+      <Button onClick={toggleTheme}>toggle theme</Button>
+      <ButtonsContainer>
+        <ColorButton
+          bgColor={appThemes[theme.mode][THEME_COLOR_BLUE].MAIN}
+          onClick={() => changeThemeColor(THEME_COLOR_BLUE)}
+        />
+        <ColorButton
+          bgColor={appThemes[theme.mode][THEME_COLOR_ORANGE].MAIN}
+          onClick={() => changeThemeColor(THEME_COLOR_ORANGE)}
+        />
+        <ColorButton
+          bgColor={appThemes[theme.mode][THEME_COLOR_VIOLET].MAIN}
+          onClick={() => changeThemeColor(THEME_COLOR_VIOLET)}
+        />
+      </ButtonsContainer>
+      <StyledLink to={routes.login}>LoginPage -{'>'}</StyledLink>
+    </Container>
   );
 };
 

@@ -22,7 +22,7 @@ const Container = styled.button<IContainer>`
   border: none;
   border-radius: ${({ active }) => (active ? BORDER_RADIUS : '24px')};
   background-color: ${({ active, theme }) => (active ? theme.MAIN_ITEMS : 'transparent')};
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, border-radius 0.2s;
 
   &:hover {
     cursor: pointer;

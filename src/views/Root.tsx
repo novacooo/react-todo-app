@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, HashRouter } from 'react-router-dom';
+import { Switch, Route, HashRouter, useLocation } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { store } from 'state';
@@ -9,6 +9,23 @@ import { routes } from 'routes';
 import LoginPage from './LoginPage';
 import DeadlinePage from './DeadlinePage';
 import DonePage from './DonePage';
+import TopBar from 'components/organisms/TopBar/TopBar';
+
+const Content = (): JSX.Element => {
+  const { pathname } = useLocation();
+
+  return (
+    <>
+      {pathname !== routes.login && <TopBar />}
+      <Switch>
+        <Route exact path={routes.home} component={HomePage} />
+        <Route exact path={routes.login} component={LoginPage} />
+        <Route exact path={routes.deadline} component={DeadlinePage} />
+        <Route exact path={routes.done} component={DonePage} />
+      </Switch>
+    </>
+  );
+};
 
 const Root = (): JSX.Element => (
   <>
@@ -23,12 +40,7 @@ const Root = (): JSX.Element => (
     <Provider store={store}>
       <HashRouter basename="/">
         <MainTemplate>
-          <Switch>
-            <Route exact path={routes.home} component={HomePage} />
-            <Route exact path={routes.login} component={LoginPage} />
-            <Route exact path={routes.deadline} component={DeadlinePage} />
-            <Route exact path={routes.done} component={DonePage} />
-          </Switch>
+          <Content />
         </MainTemplate>
       </HashRouter>
     </Provider>
