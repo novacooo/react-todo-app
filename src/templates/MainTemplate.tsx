@@ -7,7 +7,6 @@ import { actionCreators, StateType } from 'state';
 import { useThemeDetector } from 'hooks';
 import GlobalStyle from 'theme/GlobalStyle';
 import { appThemes, ThemeColorType, ThemeModeType } from 'theme';
-import { toggleTransitionClass } from 'helpers';
 import {
   LS_KEY_THEME_COLOR,
   LS_KEY_THEME_MODE,
@@ -42,7 +41,7 @@ const MainTemplate = ({ children }: IProps) => {
       switchTheme(appThemes[mode][color]);
     }
 
-    toggleTransitionClass();
+    // toggleTransitionClass();
   };
 
   useEffect(() => {

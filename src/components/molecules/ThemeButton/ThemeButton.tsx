@@ -10,7 +10,6 @@ import {
 } from 'app_constants';
 import IconButton from 'components/atoms/IconButton/IconButton';
 import { ReactComponent as PaletteIcon } from 'assets/icons/palette.svg';
-import { toggleTransitionClass } from 'helpers';
 import { appThemes, ThemeColorType } from 'theme';
 import { actionCreators, StateType } from 'state';
 import { useDispatch, useSelector } from 'react-redux';
@@ -77,7 +76,7 @@ const ThemeButton = (): JSX.Element => {
     localStorage.setItem(LS_KEY_THEME_COLOR, color);
     switchTheme(appThemes[mode][color]);
 
-    toggleTransitionClass();
+    // toggleTransitionClass();
   };
 
   return (

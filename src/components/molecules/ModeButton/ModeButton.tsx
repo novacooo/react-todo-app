@@ -14,7 +14,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { actionCreators, StateType } from 'state';
 import { bindActionCreators } from 'redux';
 import { appThemes, ThemeModeType } from 'theme';
-import { toggleTransitionClass } from 'helpers';
 import { useThemeDetector } from 'hooks';
 
 const Container = styled.button`
@@ -91,7 +90,7 @@ const ModeButton = (): JSX.Element => {
         break;
     }
 
-    toggleTransitionClass();
+    // toggleTransitionClass();
   };
 
   const renderIcon = (themeMode: ThemeModeType) => {
