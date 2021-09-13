@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.js": "/react-todo-app/static/js/main.93bc082a.chunk.js",
-    "main.js.map": "/react-todo-app/static/js/main.93bc082a.chunk.js.map",
+    "main.js": "/react-todo-app/static/js/main.b67c9c03.chunk.js",
+    "main.js.map": "/react-todo-app/static/js/main.b67c9c03.chunk.js.map",
     "runtime-main.js": "/react-todo-app/static/js/runtime-main.494ccf83.js",
     "runtime-main.js.map": "/react-todo-app/static/js/runtime-main.494ccf83.js.map",
     "static/js/2.7a33bcb7.chunk.js": "/react-todo-app/static/js/2.7a33bcb7.chunk.js",
     "static/js/2.7a33bcb7.chunk.js.map": "/react-todo-app/static/js/2.7a33bcb7.chunk.js.map",
     "index.html": "/react-todo-app/index.html",
     "static/js/2.7a33bcb7.chunk.js.LICENSE.txt": "/react-todo-app/static/js/2.7a33bcb7.chunk.js.LICENSE.txt",
-    "static/media/app_logo.8900f0fe.svg": "/react-todo-app/static/media/app_logo.8900f0fe.svg",
-    "static/media/auto_mode.7b05c1bb.svg": "/react-todo-app/static/media/auto_mode.7b05c1bb.svg",
-    "static/media/clock.01cf9458.svg": "/react-todo-app/static/media/clock.01cf9458.svg",
-    "static/media/clock_filled.2a74a89d.svg": "/react-todo-app/static/media/clock_filled.2a74a89d.svg",
-    "static/media/dark_mode.6fdab16c.svg": "/react-todo-app/static/media/dark_mode.6fdab16c.svg",
-    "static/media/done.bcc36181.svg": "/react-todo-app/static/media/done.bcc36181.svg",
-    "static/media/done_filled.da2946c9.svg": "/react-todo-app/static/media/done_filled.da2946c9.svg",
-    "static/media/home.d945f808.svg": "/react-todo-app/static/media/home.d945f808.svg",
-    "static/media/home_filled.5cc0af41.svg": "/react-todo-app/static/media/home_filled.5cc0af41.svg",
-    "static/media/light_mode.a3bee40c.svg": "/react-todo-app/static/media/light_mode.a3bee40c.svg",
-    "static/media/palette.eaea11fd.svg": "/react-todo-app/static/media/palette.eaea11fd.svg"
+    "static/media/app_logo.15089ea2.svg": "/react-todo-app/static/media/app_logo.15089ea2.svg",
+    "static/media/auto_mode.e09d3679.svg": "/react-todo-app/static/media/auto_mode.e09d3679.svg",
+    "static/media/clock.736aa370.svg": "/react-todo-app/static/media/clock.736aa370.svg",
+    "static/media/clock_filled.d478fbc4.svg": "/react-todo-app/static/media/clock_filled.d478fbc4.svg",
+    "static/media/dark_mode.60821864.svg": "/react-todo-app/static/media/dark_mode.60821864.svg",
+    "static/media/done.e9da8286.svg": "/react-todo-app/static/media/done.e9da8286.svg",
+    "static/media/done_filled.320d4cd9.svg": "/react-todo-app/static/media/done_filled.320d4cd9.svg",
+    "static/media/home.dcc43979.svg": "/react-todo-app/static/media/home.dcc43979.svg",
+    "static/media/home_filled.6ec58a89.svg": "/react-todo-app/static/media/home_filled.6ec58a89.svg",
+    "static/media/light_mode.73235d11.svg": "/react-todo-app/static/media/light_mode.73235d11.svg",
+    "static/media/palette.95980c6c.svg": "/react-todo-app/static/media/palette.95980c6c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.494ccf83.js",
     "static/js/2.7a33bcb7.chunk.js",
-    "static/js/main.93bc082a.chunk.js"
+    "static/js/main.b67c9c03.chunk.js"
   ]
 }
