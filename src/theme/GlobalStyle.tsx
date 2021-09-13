@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle`
     transition-delay: 0 !important;
   }
 
+  /* svg {
+    fill: currentColor;
+  } */
+
   *, *::before, *::after {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;

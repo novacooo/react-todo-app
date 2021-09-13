@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {
   BORDER_RADIUS,
+  LS_KEY_THEME_COLOR,
   THEME_COLOR_BLUE,
   THEME_COLOR_ORANGE,
   THEME_COLOR_VIOLET,
@@ -73,7 +74,9 @@ const ThemeButton = (): JSX.Element => {
   const changeThemeColor = (color: ThemeColorType) => {
     const { mode } = theme;
 
+    localStorage.setItem(LS_KEY_THEME_COLOR, color);
     switchTheme(appThemes[mode][color]);
+
     toggleTransitionClass();
   };
 

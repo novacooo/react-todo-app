@@ -51,14 +51,12 @@ const IconButton = ({
     width: ${iconSize}px;
     height: ${iconSize}px;
     fill: ${({ theme }) => theme.MAIN_ITEMS};
-    transition: fill ${TRANSITION_TIME};
   `;
 
   const StyledIconActive = styled(iconActive)`
     width: ${iconSize}px;
     height: ${iconSize}px;
     fill: ${({ theme }) => theme.MAIN};
-    transition: fill ${TRANSITION_TIME};
   `;
 
   const handleClick = (): void => {
