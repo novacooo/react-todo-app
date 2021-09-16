@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/react-todo-app/static/js/main.157b6376.chunk.js",
-    "main.js.map": "/react-todo-app/static/js/main.157b6376.chunk.js.map",
+    "main.js": "/react-todo-app/static/js/main.4858d208.chunk.js",
+    "main.js.map": "/react-todo-app/static/js/main.4858d208.chunk.js.map",
     "runtime-main.js": "/react-todo-app/static/js/runtime-main.494ccf83.js",
     "runtime-main.js.map": "/react-todo-app/static/js/runtime-main.494ccf83.js.map",
     "static/js/2.e91fba7b.chunk.js": "/react-todo-app/static/js/2.e91fba7b.chunk.js",
@@ -16,14 +16,21 @@
     "static/media/dark_mode.60821864.svg": "/react-todo-app/static/media/dark_mode.60821864.svg",
     "static/media/done.e9da8286.svg": "/react-todo-app/static/media/done.e9da8286.svg",
     "static/media/done_filled.320d4cd9.svg": "/react-todo-app/static/media/done_filled.320d4cd9.svg",
+    "static/media/facebook.84822c76.svg": "/react-todo-app/static/media/facebook.84822c76.svg",
+    "static/media/github.a6971cd8.svg": "/react-todo-app/static/media/github.a6971cd8.svg",
     "static/media/home.dcc43979.svg": "/react-todo-app/static/media/home.dcc43979.svg",
     "static/media/home_filled.6ec58a89.svg": "/react-todo-app/static/media/home_filled.6ec58a89.svg",
+    "static/media/instagram.dd76948e.svg": "/react-todo-app/static/media/instagram.dd76948e.svg",
     "static/media/light_mode.73235d11.svg": "/react-todo-app/static/media/light_mode.73235d11.svg",
-    "static/media/palette.95980c6c.svg": "/react-todo-app/static/media/palette.95980c6c.svg"
+    "static/media/linkedin.0b4a3ffc.svg": "/react-todo-app/static/media/linkedin.0b4a3ffc.svg",
+    "static/media/novaco_logo.fc638bbb.svg": "/react-todo-app/static/media/novaco_logo.fc638bbb.svg",
+    "static/media/palette.95980c6c.svg": "/react-todo-app/static/media/palette.95980c6c.svg",
+    "static/media/twitter.ae4c630b.svg": "/react-todo-app/static/media/twitter.ae4c630b.svg",
+    "static/media/youtube.fac323a6.svg": "/react-todo-app/static/media/youtube.fac323a6.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.494ccf83.js",
     "static/js/2.e91fba7b.chunk.js",
-    "static/js/main.157b6376.chunk.js"
+    "static/js/main.4858d208.chunk.js"
   ]
 }
