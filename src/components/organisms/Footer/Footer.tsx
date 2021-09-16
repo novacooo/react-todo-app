@@ -110,7 +110,7 @@ const IconsContainer = styled.div`
 
   @media (max-width: ${BP_MOBILE_MAX}) {
     justify-self: center;
-    gap: 8px;
+    gap: 10px;
 
     svg {
       width: 24px;
@@ -134,13 +134,10 @@ const Footer = (): JSX.Element => {
     <StyledFooter>
       <LogoContainer target="_blank" href="https://novaco.dev" rel="noreferrer">
         <FooterIcon icon={NovacoLogo} />
-        <StyledLogoText>novaco</StyledLogoText>
+        <StyledLogoText>novaco.dev</StyledLogoText>
       </LogoContainer>
       <StyledCopyright>Copyright &copy; 2021 Jacek Nowak. All rights reserved.</StyledCopyright>
       <IconsContainer>
-        <StyledAnchor target="_blank" href="https://novaco.dev" rel="noreferrer">
-          <FooterIcon icon={NovacoLogo} />
-        </StyledAnchor>
         <StyledAnchor target="_blank" href="https://github.com/novacooo" rel="noreferrer">
           <FooterIcon icon={GitHubIcon} />
         </StyledAnchor>
