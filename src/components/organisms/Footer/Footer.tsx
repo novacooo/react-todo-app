@@ -29,7 +29,7 @@ const StyledFooter = styled.footer`
   padding: 30px ${MARGIN_SIDE_DESKTOP};
   width: 100%;
   background-color: ${({ theme }) => theme.MAIN};
-  border-top: 2px solid ${({ theme }) => theme.MAIN_BORDER};
+  border-top: 4px solid ${({ theme }) => theme.MAIN_BORDER};
 
   @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
     grid-template-columns: repeat(2, 1fr);

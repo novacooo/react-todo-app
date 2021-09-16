@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ReactComponent as AppLogo } from 'assets/logo/app_logo.svg';
 import {
@@ -24,6 +24,7 @@ import ThemeButton from 'components/molecules/ThemeButton/ThemeButton';
 import ModeButton from 'components/molecules/ModeButton/ModeButton';
 import Button from 'components/atoms/Button/Button';
 import { fontSettings } from 'theme/fontSettings';
+import Sidebar from '../Sidebar/Sidebar';
 
 const Container = styled.div`
   display: grid;
@@ -114,46 +115,52 @@ const ButtonLink = styled(Link)`
 
 const TopBar = (): JSX.Element => {
   const { pathname } = useLocation();
+  const [isShowedSidebar, setIsShowedSidebar] = useState(false);
+
+  const toggleSidebar = () => setIsShowedSidebar(!isShowedSidebar);
 
   return (
-    <Container>
-      <HamburgerButton icon={HamburgerIcon} />
-      <ButtonsContainer>
-        <Link to={routes.home}>
-          <IconButton
-            active={pathname === routes.home ? true : false}
-            icon={HomeIcon}
-            iconActive={HomeFilledIcon}
-          />
-        </Link>
-        <Link to={routes.deadline}>
-          <IconButton
-            active={pathname === routes.deadline ? true : false}
-            icon={ClockIcon}
-            iconActive={ClockFilledIcon}
-          />
-        </Link>
-        <Link to={routes.done}>
-          <IconButton
-            active={pathname === routes.done ? true : false}
-            icon={DoneIcon}
-            iconActive={DoneFilledIcon}
-          />
-        </Link>
-      </ButtonsContainer>
-      <StyledAppLogo />
-      <RightContainer>
+    <>
+      <Sidebar active={isShowedSidebar} onClickBg={toggleSidebar} />
+      <Container>
+        <HamburgerButton icon={HamburgerIcon} onClick={toggleSidebar} />
         <ButtonsContainer>
-          <ThemeButton />
-          <ModeButton />
+          <Link to={routes.home}>
+            <IconButton
+              active={pathname === routes.home ? true : false}
+              icon={HomeIcon}
+              iconActive={HomeFilledIcon}
+            />
+          </Link>
+          <Link to={routes.deadline}>
+            <IconButton
+              active={pathname === routes.deadline ? true : false}
+              icon={ClockIcon}
+              iconActive={ClockFilledIcon}
+            />
+          </Link>
+          <Link to={routes.done}>
+            <IconButton
+              active={pathname === routes.done ? true : false}
+              icon={DoneIcon}
+              iconActive={DoneFilledIcon}
+            />
+          </Link>
         </ButtonsContainer>
-        <ButtonLink to={routes.login}>
-          <StyledButton icon={ArrowRightIcon} iconSize={12}>
-            Login
-          </StyledButton>
-        </ButtonLink>
-      </RightContainer>
-    </Container>
+        <StyledAppLogo />
+        <RightContainer>
+          <ButtonsContainer>
+            <ThemeButton />
+            <ModeButton />
+          </ButtonsContainer>
+          <ButtonLink to={routes.login}>
+            <StyledButton icon={ArrowRightIcon} iconSize={12}>
+              Login
+            </StyledButton>
+          </ButtonLink>
+        </RightContainer>
+      </Container>
+    </>
   );
 };
 
