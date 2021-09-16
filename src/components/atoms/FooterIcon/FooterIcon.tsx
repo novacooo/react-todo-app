@@ -6,7 +6,7 @@ interface IFooterIconProps {
   size?: number;
 }
 
-const FooterIcon = ({ icon, size = 30 }: IFooterIconProps): JSX.Element => {
+const FooterIcon = ({ icon, size = 28 }: IFooterIconProps): JSX.Element => {
   const StyledIcon = styled(icon)`
     display: block;
     width: ${size}px;

@@ -15,7 +15,7 @@ const Container = styled.div`
 
 const StyledAppLogo = styled(AppLogo)`
   margin-top: 160px;
-  width: 220px;
+  width: 180px;
   height: auto;
   fill: ${({ theme }) => theme.MAIN};
 `;

@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MARGIN_SIDE_DESKTOP, TRANSITION_TIME } from 'app_constants';
+import {
+  BP_MOBILE_MAX,
+  BP_TABLET_MAX,
+  BP_TABLET_MIN,
+  MARGIN_SIDE_DESKTOP,
+  MARGIN_SIDE_MOBILE,
+  TRANSITION_TIME,
+} from 'app_constants';
 import { fontSettings } from 'theme/fontSettings';
 import FooterIcon from 'components/atoms/FooterIcon/FooterIcon';
 import { ReactComponent as NovacoLogo } from 'assets/logo/novaco_logo.svg';
@@ -12,19 +19,33 @@ import { ReactComponent as TwitterIcon } from 'assets/icons/twitter.svg';
 import { ReactComponent as YouTubeIcon } from 'assets/icons/youtube.svg';
 
 const StyledFooter = styled.footer`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
+  row-gap: 30px;
+  background-color: red;
   position: relative;
   padding: 30px ${MARGIN_SIDE_DESKTOP};
   width: 100%;
   background-color: ${({ theme }) => theme.MAIN};
   border-top: 2px solid ${({ theme }) => theme.MAIN_BORDER};
+
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    grid-template-columns: 1fr;
+    row-gap: 25px;
+    padding: 25px ${MARGIN_SIDE_MOBILE};
+  }
 `;
 
 const LogoContainer = styled.a`
+  justify-self: start;
   display: flex;
   align-items: center;
+  gap: 10px;
   text-decoration: none;
 
   > * {
@@ -35,34 +56,65 @@ const LogoContainer = styled.a`
     fill: ${({ theme }) => theme.MAIN_ITEMS_HOVER};
     color: ${({ theme }) => theme.MAIN_ITEMS_HOVER};
   }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    justify-self: center;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 `;
 
 const StyledLogoText = styled.p`
-  margin-left: 15px;
   color: ${({ theme }) => theme.MAIN_ITEMS};
   font-size: ${fontSettings.sizesDesktop.m};
   font-weight: ${fontSettings.weights.semiBold};
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    font-size: ${fontSettings.sizesMobile.m};
+  }
 `;
 
 const StyledCopyright = styled.p`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  justify-self: center;
+
   color: ${({ theme }) => theme.MAIN_ITEMS};
   font-size: ${fontSettings.sizesDesktop.s};
   font-weight: ${fontSettings.weights.medium};
+  text-align: center;
+
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    grid-row: 3;
+    font-size: ${fontSettings.sizesMobile.s};
+  }
 `;
 
 const IconsContainer = styled.div`
+  justify-self: end;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 
-  * {
-    margin-right: 15px;
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    gap: 10px;
+  }
 
-    &:last-child {
-      margin-right: 0;
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    justify-self: center;
+    gap: 8px;
+
+    svg {
+      width: 24px;
+      height: 24px;
     }
   }
 `;
@@ -87,19 +139,19 @@ const Footer = (): JSX.Element => {
       <StyledCopyright>Copyright &copy; 2021 Jacek Nowak. All rights reserved.</StyledCopyright>
       <IconsContainer>
         <StyledAnchor target="_blank" href="https://novaco.dev" rel="noreferrer">
-          <FooterIcon icon={NovacoLogo} size={28} />
+          <FooterIcon icon={NovacoLogo} />
         </StyledAnchor>
         <StyledAnchor target="_blank" href="https://github.com/novacooo" rel="noreferrer">
           <FooterIcon icon={GitHubIcon} />
         </StyledAnchor>
         <StyledAnchor target="_blank" href="https://novaco.dev" rel="noreferrer">
-          <FooterIcon icon={LinkedInIcon} size={28} />
+          <FooterIcon icon={LinkedInIcon} />
         </StyledAnchor>
         <StyledAnchor target="_blank" href="https://novaco.dev" rel="noreferrer">
           <FooterIcon icon={InstagramIcon} />
         </StyledAnchor>
         <StyledAnchor target="_blank" href="https://novaco.dev" rel="noreferrer">
-          <FooterIcon icon={FacebookIcon} size={28} />
+          <FooterIcon icon={FacebookIcon} />
         </StyledAnchor>
         <StyledAnchor target="_blank" href="https://novaco.dev" rel="noreferrer">
           <FooterIcon icon={TwitterIcon} />
