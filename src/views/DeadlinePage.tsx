@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { routes } from 'routes';
 import styled from 'styled-components';
+import PageTemplate from 'templates/PageTemplate';
 import { fontSettings } from 'theme/fontSettings';
 
 const Container = styled.div`
@@ -26,10 +27,12 @@ const StyledNavLink = styled(NavLink)`
 
 const DeadlinePage = (): JSX.Element => {
   return (
-    <Container>
-      <StyledHeader>DeadlinePage</StyledHeader>
-      <StyledNavLink to={routes.home}>{'<'}- HomePage</StyledNavLink>
-    </Container>
+    <PageTemplate>
+      <Container>
+        <StyledHeader>DeadlinePage</StyledHeader>
+        <StyledNavLink to={routes.home}>{'<'}- HomePage</StyledNavLink>
+      </Container>
+    </PageTemplate>
   );
 };
 

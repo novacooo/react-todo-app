@@ -53,7 +53,7 @@ const HamburgerButton = styled(IconButton)`
   display: none;
 
   @media (max-width: ${BP_MOBILE_MAX}) {
-    display: block;
+    display: flex;
   }
 `;
 
@@ -78,7 +78,7 @@ const StyledAppLogo = styled(AppLogo)`
   fill: ${({ theme }) => theme.MAIN_ITEMS};
 
   @media (max-width: ${BP_MOBILE_MAX}) {
-    height: 30px;
+    height: 32px;
   }
 `;
 
