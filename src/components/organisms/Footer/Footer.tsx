@@ -6,6 +6,7 @@ import {
   BP_TABLET_MIN,
   MARGIN_SIDE_DESKTOP,
   MARGIN_SIDE_MOBILE,
+  MARGIN_SIDE_TABLET,
   TRANSITION_TIME,
 } from 'app_constants';
 import { fontSettings } from 'theme/fontSettings';
@@ -32,6 +33,7 @@ const StyledFooter = styled.footer`
 
   @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
     grid-template-columns: repeat(2, 1fr);
+    padding: 30px ${MARGIN_SIDE_TABLET};
   }
 
   @media (max-width: ${BP_MOBILE_MAX}) {

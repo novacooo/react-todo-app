@@ -1,4 +1,5 @@
 export const MARGIN_SIDE_DESKTOP = '50px';
+export const MARGIN_SIDE_TABLET = '40px';
 export const MARGIN_SIDE_MOBILE = '30px';
 export const BORDER_RADIUS = '10px';
 export const BP_MOBILE_MAX = '767px';

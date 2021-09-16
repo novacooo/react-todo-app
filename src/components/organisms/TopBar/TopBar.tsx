@@ -1,8 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as AppLogo } from 'assets/logo/app_logo.svg';
-import { MARGIN_SIDE_DESKTOP } from 'app_constants';
+import {
+  BP_MOBILE_MAX,
+  BP_TABLET_MAX,
+  BP_TABLET_MIN,
+  MARGIN_SIDE_DESKTOP,
+  MARGIN_SIDE_MOBILE,
+  MARGIN_SIDE_TABLET,
+} from 'app_constants';
 import IconButton from 'components/atoms/IconButton/IconButton';
+import { ReactComponent as HamburgerIcon } from 'assets/icons/hamburger.svg';
 import { ReactComponent as HomeIcon } from 'assets/icons/home.svg';
 import { ReactComponent as HomeFilledIcon } from 'assets/icons/home_filled.svg';
 import { ReactComponent as ClockIcon } from 'assets/icons/clock.svg';
@@ -17,51 +25,74 @@ import ModeButton from 'components/molecules/ModeButton/ModeButton';
 import Button from 'components/atoms/Button/Button';
 import { fontSettings } from 'theme/fontSettings';
 
-// TODO: Make mobile
-
 const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   padding: 11px ${MARGIN_SIDE_DESKTOP};
   width: 100%;
-  height: 74px;
   background-color: ${({ theme }) => theme.MAIN};
   border-bottom: 4px solid ${({ theme }) => theme.MAIN_BORDER};
+
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    padding: 11px ${MARGIN_SIDE_TABLET};
+  }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    grid-template-columns: repeat(3, minmax(80px, 1fr));
+    padding: 6px ${MARGIN_SIDE_MOBILE};
+  }
 `;
 
-const StyledAppLogo = styled(AppLogo)`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: auto;
-  height: 36px;
-  transform: translate(-50%, -50%);
-  fill: ${({ theme }) => theme.MAIN_ITEMS};
+const HamburgerButton = styled(IconButton)`
+  position: relative;
+  left: -13px;
+  display: none;
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    display: block;
+  }
 `;
 
 const ButtonsContainer = styled.div`
+  justify-self: start;
   display: flex;
+  gap: 20px;
 
-  > * {
-    margin-right: 20px;
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    gap: 10px;
+  }
 
-    &:last-child {
-      margin-right: 0;
-    }
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    display: none;
+  }
+`;
+
+const StyledAppLogo = styled(AppLogo)`
+  justify-self: center;
+  width: auto;
+  height: 36px;
+  fill: ${({ theme }) => theme.MAIN_ITEMS};
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    height: 30px;
   }
 `;
 
 const RightContainer = styled.div`
+  justify-self: end;
   display: flex;
   align-items: center;
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    display: none;
+  }
 `;
 
 const StyledButton = styled(Button)`
-  margin-left: 30px;
   height: 33px;
   background-color: ${({ theme }) => theme.MAIN_ITEMS};
   color: ${({ theme }) => theme.MAIN};
@@ -73,7 +104,12 @@ const StyledButton = styled(Button)`
 `;
 
 const ButtonLink = styled(Link)`
+  margin-left: 30px;
   text-decoration: none;
+
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    margin-left: 15px;
+  }
 `;
 
 const TopBar = (): JSX.Element => {
@@ -81,7 +117,7 @@ const TopBar = (): JSX.Element => {
 
   return (
     <Container>
-      <StyledAppLogo />
+      <HamburgerButton icon={HamburgerIcon} />
       <ButtonsContainer>
         <Link to={routes.home}>
           <IconButton
@@ -105,6 +141,7 @@ const TopBar = (): JSX.Element => {
           />
         </Link>
       </ButtonsContainer>
+      <StyledAppLogo />
       <RightContainer>
         <ButtonsContainer>
           <ThemeButton />
