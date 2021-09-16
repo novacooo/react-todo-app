@@ -10,7 +10,7 @@ const violetLight: IThemeType = {
   MAIN_BORDER: 'hsl(274, 87%, 52%)',
   MAIN_TRANSPARENT: 'hsla(274, 87%, 58%, 0.12)',
   MAIN_ITEMS: 'hsl(0, 0%, 100%)',
-  MAIN_ITEMS_HOVER: 'hsl(0, 0%, 96%)',
+  MAIN_ITEMS_HOVER: 'hsl(274, 100%, 88%)',
   MAIN_PATTERN: 'hsl(281, 62%, 92%)',
 
   BG_PRIMARY: 'hsl(0, 0%, 100%)',

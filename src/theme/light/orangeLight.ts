@@ -10,7 +10,7 @@ const orangeLight: IThemeType = {
   MAIN_BORDER: 'hsl(29, 77%, 46%)',
   MAIN_TRANSPARENT: 'hsla(29, 83%, 51%, 0.12)',
   MAIN_ITEMS: 'hsl(0, 0%, 100%)',
-  MAIN_ITEMS_HOVER: 'hsl(0, 0%, 96%)',
+  MAIN_ITEMS_HOVER: 'hsl(29, 100%, 88%)',
   MAIN_PATTERN: 'hsl(29, 80%, 92%)',
 
   BG_PRIMARY: 'hsl(0, 0%, 100%)',

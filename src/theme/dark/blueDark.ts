@@ -10,7 +10,7 @@ const blueDark: IThemeType = {
   MAIN_BORDER: 'hsl(216, 58%, 46%)',
   MAIN_TRANSPARENT: 'hsla(216, 81%, 63%, 0.07)',
   MAIN_ITEMS: 'hsl(0, 0%, 94%)',
-  MAIN_ITEMS_HOVER: 'hsl(0, 0%, 90%)',
+  MAIN_ITEMS_HOVER: 'hsl(216, 100%, 86%)',
   MAIN_PATTERN: 'hsl(216, 21%, 10%)',
 
   BG_PRIMARY: 'hsl(0, 0%, 7%)',
