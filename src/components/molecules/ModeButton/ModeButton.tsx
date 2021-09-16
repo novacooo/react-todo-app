@@ -97,8 +97,10 @@ const ModeButton = (): JSX.Element => {
     switch (themeMode) {
       case THEME_MODE_AUTO:
         return <AutoIcon />;
+
       case THEME_MODE_LIGHT:
         return <LightIcon />;
+
       case THEME_MODE_DARK:
         return <DarkIcon />;
     }

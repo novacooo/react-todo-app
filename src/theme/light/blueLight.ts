@@ -6,9 +6,11 @@ const blueLight: IThemeType = {
   color: THEME_COLOR_BLUE,
 
   MAIN: 'hsl(227, 59%, 52%)',
+  MAIN_HOVER: 'hsl(227, 59%, 56%)',
   MAIN_BORDER: 'hsl(227, 59%, 48%)',
   MAIN_TRANSPARENT: 'hsla(227, 59%, 52%, 0.12)',
   MAIN_ITEMS: 'hsl(0, 0%, 100%)',
+  MAIN_ITEMS_HOVER: 'hsl(0, 0%, 96%)',
   MAIN_PATTERN: 'hsl(223, 75%, 93%)',
 
   BG_PRIMARY: 'hsl(0, 0%, 100%)',

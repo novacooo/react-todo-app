@@ -1,4 +1,4 @@
-import { BORDER_RADIUS } from 'app_constants';
+import { BORDER_RADIUS, TRANSITION_TIME } from 'app_constants';
 import React from 'react';
 import styled from 'styled-components';
 import { fontSettings } from 'theme/fontSettings';
@@ -24,9 +24,11 @@ const StyledButton = styled.button`
   color: ${({ theme }) => theme.MAIN_ITEMS};
   font-size: ${fontSettings.sizesDesktop.m};
   font-weight: ${fontSettings.weights.semiBold};
+  transition: background-color ${TRANSITION_TIME};
 
   &:hover {
     cursor: pointer;
+    background-color: ${({ theme }) => theme.MAIN_HOVER};
   }
 `;
 

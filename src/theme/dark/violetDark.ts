@@ -6,9 +6,11 @@ const violetDark: IThemeType = {
   color: THEME_COLOR_VIOLET,
 
   MAIN: 'hsl(274, 87%, 63%)',
+  MAIN_HOVER: 'hsl(274, 87%, 58%)',
   MAIN_BORDER: 'hsl(277, 65%, 52%)',
   MAIN_TRANSPARENT: 'hsla(274, 87%, 63%, 0.07)',
   MAIN_ITEMS: 'hsl(0, 0%, 94%)',
+  MAIN_ITEMS_HOVER: 'hsl(0, 0%, 90%)',
   MAIN_PATTERN: 'hsl(281, 24%, 11%)',
 
   BG_PRIMARY: 'hsl(0, 0%, 7%)',

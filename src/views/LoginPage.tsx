@@ -1,35 +1,19 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { routes } from 'routes';
 import styled from 'styled-components';
-import { fontSettings } from 'theme/fontSettings';
+import { ReactComponent as AppLogo } from 'assets/logo/app_logo.svg';
+import PageTemplate from 'templates/PageTemplate';
 
-const Container = styled.div`
-  padding-top: 250px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const StyledHeader = styled.h1`
-  color: ${({ theme }) => theme.TEXT_PRIMARY};
-  font-size: ${fontSettings.sizesDesktop.xl};
-  font-weight: ${fontSettings.weights.semiBold};
-`;
-
-const StyledNavLink = styled(NavLink)`
-  margin-top: 30px;
-  color: ${({ theme }) => theme.TEXT_SECONDARY};
-  font-size: ${fontSettings.sizesDesktop.m};
-  font-weight: ${fontSettings.weights.medium};
+const StyledAppLogo = styled(AppLogo)`
+  width: 220px;
+  height: auto;
+  fill: ${({ theme }) => theme.MAIN};
 `;
 
 const LoginPage = (): JSX.Element => {
   return (
-    <Container>
-      <StyledHeader>LoginPage</StyledHeader>
-      <StyledNavLink to={routes.home}>{'<'}- HomePage</StyledNavLink>
-    </Container>
+    <PageTemplate>
+      <StyledAppLogo />
+    </PageTemplate>
   );
 };
 

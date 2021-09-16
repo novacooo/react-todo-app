@@ -22,9 +22,11 @@ export interface IThemeType {
   color: ThemeColorType;
 
   MAIN: string;
+  MAIN_HOVER: string;
   MAIN_BORDER: string;
   MAIN_TRANSPARENT: string;
   MAIN_ITEMS: string;
+  MAIN_ITEMS_HOVER: string;
   MAIN_PATTERN: string;
 
   BG_PRIMARY: string;

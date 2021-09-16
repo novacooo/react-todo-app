@@ -17,6 +17,8 @@ import ModeButton from 'components/molecules/ModeButton/ModeButton';
 import Button from 'components/atoms/Button/Button';
 import { fontSettings } from 'theme/fontSettings';
 
+// TODO: Make mobile
+
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
@@ -64,6 +66,10 @@ const StyledButton = styled(Button)`
   background-color: ${({ theme }) => theme.MAIN_ITEMS};
   color: ${({ theme }) => theme.MAIN};
   font-size: ${fontSettings.sizesDesktop.s};
+
+  &:hover {
+    background-color: ${({ theme }) => theme.MAIN_ITEMS};
+  }
 `;
 
 const ButtonLink = styled(Link)`

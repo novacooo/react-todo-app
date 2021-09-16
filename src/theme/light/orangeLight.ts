@@ -6,9 +6,11 @@ const orangeLight: IThemeType = {
   color: THEME_COLOR_ORANGE,
 
   MAIN: 'hsl(29, 83%, 51%)',
+  MAIN_HOVER: 'hsl(29, 83%, 57%)',
   MAIN_BORDER: 'hsl(29, 77%, 46%)',
   MAIN_TRANSPARENT: 'hsla(29, 83%, 51%, 0.12)',
   MAIN_ITEMS: 'hsl(0, 0%, 100%)',
+  MAIN_ITEMS_HOVER: 'hsl(0, 0%, 96%)',
   MAIN_PATTERN: 'hsl(29, 80%, 92%)',
 
   BG_PRIMARY: 'hsl(0, 0%, 100%)',
