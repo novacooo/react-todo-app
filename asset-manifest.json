@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/react-todo-app/static/js/main.4fd1a156.chunk.js",
-    "main.js.map": "/react-todo-app/static/js/main.4fd1a156.chunk.js.map",
+    "main.js": "/react-todo-app/static/js/main.796d9fcc.chunk.js",
+    "main.js.map": "/react-todo-app/static/js/main.796d9fcc.chunk.js.map",
     "runtime-main.js": "/react-todo-app/static/js/runtime-main.494ccf83.js",
     "runtime-main.js.map": "/react-todo-app/static/js/runtime-main.494ccf83.js.map",
     "static/js/2.034d2f92.chunk.js": "/react-todo-app/static/js/2.034d2f92.chunk.js",
@@ -24,6 +24,7 @@
     "static/media/instagram.dd76948e.svg": "/react-todo-app/static/media/instagram.dd76948e.svg",
     "static/media/light_mode.73235d11.svg": "/react-todo-app/static/media/light_mode.73235d11.svg",
     "static/media/linkedin.0b4a3ffc.svg": "/react-todo-app/static/media/linkedin.0b4a3ffc.svg",
+    "static/media/login.b1119fe0.svg": "/react-todo-app/static/media/login.b1119fe0.svg",
     "static/media/novaco_logo.fc638bbb.svg": "/react-todo-app/static/media/novaco_logo.fc638bbb.svg",
     "static/media/palette.95980c6c.svg": "/react-todo-app/static/media/palette.95980c6c.svg",
     "static/media/twitter.ae4c630b.svg": "/react-todo-app/static/media/twitter.ae4c630b.svg",
@@ -32,6 +33,6 @@
   "entrypoints": [
     "static/js/runtime-main.494ccf83.js",
     "static/js/2.034d2f92.chunk.js",
-    "static/js/main.4fd1a156.chunk.js"
+    "static/js/main.796d9fcc.chunk.js"
   ]
 }
