@@ -1,3 +1,4 @@
+import { BORDER_RADIUS } from 'app_constants';
 import ModeButton from 'components/molecules/ModeButton/ModeButton';
 import ThemeButton from 'components/molecules/ThemeButton/ThemeButton';
 import React from 'react';
@@ -22,6 +23,9 @@ const DarkContainer = styled.div<ISidebarProps>`
 `;
 
 const Container = styled.div<ISidebarProps>`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   visibility: ${({ active }) => (active ? 'visible' : 'hidden')};
   position: fixed;
   top: 0;
@@ -40,6 +44,9 @@ const Container = styled.div<ISidebarProps>`
 const ButtonsContainer = styled.div`
   display: flex;
   gap: 10px;
+  padding: 10px 14px;
+  background-color: ${({ theme }) => theme.MAIN};
+  border-radius: ${BORDER_RADIUS};
 `;
 
 const Sidebar = ({ active = false, onClickBg }: ISidebarProps): JSX.Element => {
