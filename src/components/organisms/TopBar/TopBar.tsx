@@ -11,6 +11,7 @@ import {
 } from 'app_constants';
 import IconButton from 'components/atoms/IconButton/IconButton';
 import { ReactComponent as HamburgerIcon } from 'assets/icons/hamburger.svg';
+import { ReactComponent as LoginIcon } from 'assets/icons/login.svg';
 import { ReactComponent as HomeIcon } from 'assets/icons/home.svg';
 import { ReactComponent as HomeFilledIcon } from 'assets/icons/home_filled.svg';
 import { ReactComponent as ClockIcon } from 'assets/icons/clock.svg';
@@ -49,9 +50,23 @@ const Container = styled.div`
 `;
 
 const HamburgerButton = styled(IconButton)`
+  display: none;
   position: relative;
   left: -13px;
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    display: flex;
+  }
+`;
+
+const LoginButtonLink = styled(Link)`
+  justify-self: end;
+`;
+
+const LoginButton = styled(IconButton)`
   display: none;
+  position: relative;
+  right: -13px;
 
   @media (max-width: ${BP_MOBILE_MAX}) {
     display: flex;
@@ -159,6 +174,9 @@ const TopBar = (): JSX.Element => {
             </StyledButton>
           </ButtonLink>
         </RightContainer>
+        <LoginButtonLink to={routes.login}>
+          <LoginButton icon={LoginIcon} />
+        </LoginButtonLink>
       </Container>
     </>
   );
