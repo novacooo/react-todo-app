@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as AppLogo } from 'assets/logo/app_logo.svg';
+import { ReactComponent as ClockIcon } from 'assets/icons/clock.svg';
 import PageTemplate from 'templates/PageTemplate';
 import Button from 'components/atoms/Button/Button';
 import { Link } from 'react-router-dom';
 import { routes } from 'routes';
+import Input from 'components/atoms/Input/Input';
 
 const Container = styled.div`
   display: flex;
@@ -28,6 +30,11 @@ const StyledButton = styled(Button)`
   margin-top: 70px;
 `;
 
+const StyledInput = styled(Input)`
+  margin-top: 50px;
+  width: 400px;
+`;
+
 const LoginPage = (): JSX.Element => {
   return (
     <PageTemplate>
@@ -36,6 +43,7 @@ const LoginPage = (): JSX.Element => {
         <StyledLink to={routes.home}>
           <StyledButton>Go to HomePage</StyledButton>
         </StyledLink>
+        <StyledInput icon={ClockIcon} placeholder="Username" />
       </Container>
     </PageTemplate>
   );
