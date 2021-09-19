@@ -47,7 +47,7 @@ const LoginPage = (): JSX.Element => {
         <StyledAppLogo />
         <InputsContainer>
           <Input icon={EmailIcon} placeholder="Email address" />
-          <Input icon={LockIcon} placeholder="Password" />
+          <Input type="password" icon={LockIcon} placeholder="Password" />
         </InputsContainer>
         <StyledLink to={routes.home}>
           <StyledButton>Go to HomePage</StyledButton>

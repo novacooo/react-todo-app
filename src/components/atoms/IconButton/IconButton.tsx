@@ -33,7 +33,8 @@ const Container = styled.button<IContainer>`
   ${({ active, theme }) =>
     !active &&
     css`
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: ${theme.BG_HOVER};
       }
     `}

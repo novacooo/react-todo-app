@@ -28,7 +28,8 @@ const Container = styled.button`
   border-radius: 24px;
   transition: background-color ${TRANSITION_TIME};
 
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
     background-color: ${({ theme }) => theme.BG_HOVER};
   }

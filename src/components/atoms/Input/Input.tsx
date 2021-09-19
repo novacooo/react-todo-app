@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { BORDER_RADIUS, TRANSITION_TIME } from 'app_constants';
+import IconButton from '../IconButton/IconButton';
 import { fontSettings } from 'theme/fontSettings';
+import { ReactComponent as ShowIcon } from 'assets/icons/show.svg';
+import { ReactComponent as HideIcon } from 'assets/icons/hide.svg';
+
+type InputType = 'text' | 'password';
 
 interface IInputProps {
   placeholder: string;
+  type?: InputType;
   icon?: React.FC;
   iconSize?: number;
   className?: string;
 }
 
 interface IStyledInputProps {
+  paddingRight: number;
   paddingLeft: number;
 }
 
@@ -27,7 +34,6 @@ const StyledContainer = styled.div`
   border-radius: ${BORDER_RADIUS};
   transition: border-color ${TRANSITION_TIME};
 
-  &:hover,
   &:focus-within {
     border-color: ${({ theme }) => theme.BORDER_HOVER};
   }
@@ -43,12 +49,12 @@ const StyledIconContainer = styled.div`
   top: 50%;
   left: 20px;
   transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 `;
 
 const StyledInput = styled.input<IStyledInputProps>`
-  padding: 0 20px 0 ${({ paddingLeft }) => paddingLeft}px;
+  padding: ${({ paddingLeft, paddingRight }) => `0 ${paddingRight}px 0 ${paddingLeft}px`};
   width: 100%;
   height: 100%;
   background-color: transparent;
@@ -62,8 +68,31 @@ const StyledInput = styled.input<IStyledInputProps>`
   }
 `;
 
-const Input = ({ placeholder, icon, iconSize = 20, className }: IInputProps): JSX.Element => {
-  const paddingLeft = 20 + (icon ? iconSize + 15 : 0);
+// TODO: Change hover bg
+const StyledPasswordButton = styled(IconButton)`
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+
+  > svg {
+    fill: ${({ theme }) => theme.ICON_SECONDARY};
+  }
+`;
+
+const Input = ({
+  placeholder,
+  type = 'text',
+  icon,
+  iconSize = 18,
+  className,
+}: IInputProps): JSX.Element => {
+  const [actualType, setActualType] = useState<InputType>(type);
+
+  const paddingLeft = 20 + (icon ? 33 : 0);
+  const paddingRight = type === 'password' ? 55 : 20;
 
   const renderIcon = () => {
     if (icon) {
@@ -83,10 +112,24 @@ const Input = ({ placeholder, icon, iconSize = 20, className }: IInputProps): JS
     }
   };
 
+  const togglePassword = () => setActualType(actualType === 'password' ? 'text' : 'password');
+
   return (
     <StyledContainer className={className}>
       {renderIcon()}
-      <StyledInput type="text" placeholder={placeholder} paddingLeft={paddingLeft} />
+      <StyledInput
+        type={actualType}
+        placeholder={placeholder}
+        paddingRight={paddingRight}
+        paddingLeft={paddingLeft}
+      />
+      {type === 'password' && (
+        <StyledPasswordButton
+          onClick={togglePassword}
+          icon={actualType === 'password' ? ShowIcon : HideIcon}
+          iconSize={20}
+        />
+      )}
     </StyledContainer>
   );
 };
