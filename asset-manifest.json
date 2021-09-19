@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/react-todo-app/static/js/main.bc44555e.chunk.js",
-    "main.js.map": "/react-todo-app/static/js/main.bc44555e.chunk.js.map",
+    "main.js": "/react-todo-app/static/js/main.57b61e0f.chunk.js",
+    "main.js.map": "/react-todo-app/static/js/main.57b61e0f.chunk.js.map",
     "runtime-main.js": "/react-todo-app/static/js/runtime-main.494ccf83.js",
     "runtime-main.js.map": "/react-todo-app/static/js/runtime-main.494ccf83.js.map",
     "static/js/2.034d2f92.chunk.js": "/react-todo-app/static/js/2.034d2f92.chunk.js",
@@ -16,6 +16,7 @@
     "static/media/dark_mode.60821864.svg": "/react-todo-app/static/media/dark_mode.60821864.svg",
     "static/media/done.e9da8286.svg": "/react-todo-app/static/media/done.e9da8286.svg",
     "static/media/done_filled.320d4cd9.svg": "/react-todo-app/static/media/done_filled.320d4cd9.svg",
+    "static/media/email.cf594a3e.svg": "/react-todo-app/static/media/email.cf594a3e.svg",
     "static/media/facebook.84822c76.svg": "/react-todo-app/static/media/facebook.84822c76.svg",
     "static/media/github.a6971cd8.svg": "/react-todo-app/static/media/github.a6971cd8.svg",
     "static/media/hamburger.803cc936.svg": "/react-todo-app/static/media/hamburger.803cc936.svg",
@@ -24,6 +25,7 @@
     "static/media/instagram.dd76948e.svg": "/react-todo-app/static/media/instagram.dd76948e.svg",
     "static/media/light_mode.73235d11.svg": "/react-todo-app/static/media/light_mode.73235d11.svg",
     "static/media/linkedin.0b4a3ffc.svg": "/react-todo-app/static/media/linkedin.0b4a3ffc.svg",
+    "static/media/lock.1ae25e9a.svg": "/react-todo-app/static/media/lock.1ae25e9a.svg",
     "static/media/login.b1119fe0.svg": "/react-todo-app/static/media/login.b1119fe0.svg",
     "static/media/novaco_logo.fc638bbb.svg": "/react-todo-app/static/media/novaco_logo.fc638bbb.svg",
     "static/media/palette.95980c6c.svg": "/react-todo-app/static/media/palette.95980c6c.svg",
@@ -33,6 +35,6 @@
   "entrypoints": [
     "static/js/runtime-main.494ccf83.js",
     "static/js/2.034d2f92.chunk.js",
-    "static/js/main.bc44555e.chunk.js"
+    "static/js/main.57b61e0f.chunk.js"
   ]
 }
