@@ -20,6 +20,7 @@ interface IStyledIconProps {
 
 const StyledContainer = styled.div`
   position: relative;
+  width: 100%;
   height: 50px;
   background-color: ${({ theme }) => theme.BG_SECONDARY};
   border: 2px solid ${({ theme }) => theme.BORDER};
@@ -30,6 +31,20 @@ const StyledContainer = styled.div`
   &:focus-within {
     border-color: ${({ theme }) => theme.BORDER_HOVER};
   }
+`;
+
+const StyledIconContainer = styled.div`
+  user-select: none;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
 `;
 
 const StyledInput = styled.input<IStyledInputProps>`
@@ -53,18 +68,16 @@ const Input = ({ placeholder, icon, iconSize = 20, className }: IInputProps): JS
   const renderIcon = () => {
     if (icon) {
       const StyledIcon = styled(icon)<IStyledIconProps>`
-        user-select: none;
-        pointer-events: none;
-        position: absolute;
-        top: 50%;
-        left: 20px;
-        transform: translateY(-50%);
         width: ${iconSize}px;
         height: ${iconSize}px;
         fill: ${({ theme }) => theme.ICON_SECONDARY};
       `;
 
-      return <StyledIcon />;
+      return (
+        <StyledIconContainer>
+          <StyledIcon />
+        </StyledIconContainer>
+      );
     } else {
       return null;
     }

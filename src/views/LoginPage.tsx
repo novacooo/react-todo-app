@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as AppLogo } from 'assets/logo/app_logo.svg';
-import { ReactComponent as ClockIcon } from 'assets/icons/clock.svg';
+import { ReactComponent as EmailIcon } from 'assets/icons/email.svg';
+import { ReactComponent as LockIcon } from 'assets/icons/lock.svg';
 import PageTemplate from 'templates/PageTemplate';
 import Button from 'components/atoms/Button/Button';
 import { Link } from 'react-router-dom';
@@ -22,17 +23,21 @@ const StyledAppLogo = styled(AppLogo)`
   fill: ${({ theme }) => theme.MAIN};
 `;
 
+const InputsContainer = styled.div`
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+`;
+
 const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
 const StyledButton = styled(Button)`
-  margin-top: 70px;
-`;
-
-const StyledInput = styled(Input)`
   margin-top: 50px;
-  width: 400px;
 `;
 
 const LoginPage = (): JSX.Element => {
@@ -40,10 +45,13 @@ const LoginPage = (): JSX.Element => {
     <PageTemplate>
       <Container>
         <StyledAppLogo />
+        <InputsContainer>
+          <Input icon={EmailIcon} placeholder="Email address" />
+          <Input icon={LockIcon} placeholder="Password" />
+        </InputsContainer>
         <StyledLink to={routes.home}>
           <StyledButton>Go to HomePage</StyledButton>
         </StyledLink>
-        <StyledInput icon={ClockIcon} placeholder="Username" />
       </Container>
     </PageTemplate>
   );
