@@ -9,9 +9,11 @@ import {
   MARGIN_SIDE_MOBILE,
   MARGIN_SIDE_TABLET,
 } from 'app_constants';
+import BackgroundPattern from 'components/atoms/BackgroundPattern/BackgroundPattern';
 
 interface IPageTemplateProps {
   children: JSX.Element;
+  showPattern?: boolean;
 }
 
 const MainContainer = styled.div`
@@ -35,9 +37,10 @@ const ContentContainer = styled.div`
   }
 `;
 
-const PageTemplate = ({ children }: IPageTemplateProps): JSX.Element => (
+const PageTemplate = ({ children, showPattern }: IPageTemplateProps): JSX.Element => (
   <MainContainer>
     <ContentContainer>{children}</ContentContainer>
+    {showPattern && <BackgroundPattern />}
     <Footer />
   </MainContainer>
 );

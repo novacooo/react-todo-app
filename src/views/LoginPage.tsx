@@ -60,7 +60,7 @@ const StyledButton = styled(Button)`
 
 const LoginPage = (): JSX.Element => {
   return (
-    <PageTemplate>
+    <PageTemplate showPattern>
       <Container>
         <StyledAppLogo />
         <FormContainer>
