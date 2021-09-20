@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/react-todo-app/static/js/main.e4c3e0e9.chunk.js",
-    "main.js.map": "/react-todo-app/static/js/main.e4c3e0e9.chunk.js.map",
+    "main.js": "/react-todo-app/static/js/main.fe41c438.chunk.js",
+    "main.js.map": "/react-todo-app/static/js/main.fe41c438.chunk.js.map",
     "runtime-main.js": "/react-todo-app/static/js/runtime-main.494ccf83.js",
     "runtime-main.js.map": "/react-todo-app/static/js/runtime-main.494ccf83.js.map",
     "static/js/2.9ce11e79.chunk.js": "/react-todo-app/static/js/2.9ce11e79.chunk.js",
@@ -11,6 +11,8 @@
     "static/media/app_logo.15089ea2.svg": "/react-todo-app/static/media/app_logo.15089ea2.svg",
     "static/media/arrow_right.af2b9b3b.svg": "/react-todo-app/static/media/arrow_right.af2b9b3b.svg",
     "static/media/auto_mode.e09d3679.svg": "/react-todo-app/static/media/auto_mode.e09d3679.svg",
+    "static/media/bottom_left_shape.148c9d82.svg": "/react-todo-app/static/media/bottom_left_shape.148c9d82.svg",
+    "static/media/bottom_right_shape.6a7775e9.svg": "/react-todo-app/static/media/bottom_right_shape.6a7775e9.svg",
     "static/media/clock.736aa370.svg": "/react-todo-app/static/media/clock.736aa370.svg",
     "static/media/clock_filled.d478fbc4.svg": "/react-todo-app/static/media/clock_filled.d478fbc4.svg",
     "static/media/dark_mode.60821864.svg": "/react-todo-app/static/media/dark_mode.60821864.svg",
@@ -23,6 +25,7 @@
     "static/media/hide.7f0de5e2.svg": "/react-todo-app/static/media/hide.7f0de5e2.svg",
     "static/media/home.dcc43979.svg": "/react-todo-app/static/media/home.dcc43979.svg",
     "static/media/home_filled.6ec58a89.svg": "/react-todo-app/static/media/home_filled.6ec58a89.svg",
+    "static/media/icon.408bbcf6.svg": "/react-todo-app/static/media/icon.408bbcf6.svg",
     "static/media/instagram.dd76948e.svg": "/react-todo-app/static/media/instagram.dd76948e.svg",
     "static/media/light_mode.73235d11.svg": "/react-todo-app/static/media/light_mode.73235d11.svg",
     "static/media/linkedin.0b4a3ffc.svg": "/react-todo-app/static/media/linkedin.0b4a3ffc.svg",
@@ -31,12 +34,14 @@
     "static/media/novaco_logo.fc638bbb.svg": "/react-todo-app/static/media/novaco_logo.fc638bbb.svg",
     "static/media/palette.95980c6c.svg": "/react-todo-app/static/media/palette.95980c6c.svg",
     "static/media/show.61aa94a2.svg": "/react-todo-app/static/media/show.61aa94a2.svg",
+    "static/media/top_left_shape.bc6e7f5d.svg": "/react-todo-app/static/media/top_left_shape.bc6e7f5d.svg",
+    "static/media/top_right_shape.9459dc60.svg": "/react-todo-app/static/media/top_right_shape.9459dc60.svg",
     "static/media/twitter.ae4c630b.svg": "/react-todo-app/static/media/twitter.ae4c630b.svg",
     "static/media/youtube.fac323a6.svg": "/react-todo-app/static/media/youtube.fac323a6.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.494ccf83.js",
     "static/js/2.9ce11e79.chunk.js",
-    "static/js/main.e4c3e0e9.chunk.js"
+    "static/js/main.fe41c438.chunk.js"
   ]
 }
