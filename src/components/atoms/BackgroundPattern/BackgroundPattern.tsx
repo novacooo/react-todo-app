@@ -140,14 +140,70 @@ const StyledCenterLeftIcon = styled(Icon)`
 const StyledBottomLeftIcon = styled(Icon)`
   ${patternStyle}
   position: absolute;
-  top: 270px;
-  left: 20vw;
-  transform: rotate(-18deg);
-  width: 4.5vw;
+  top: 735px;
+  left: 8vw;
+  transform: rotate(30deg);
+  width: 7.5vw;
   height: auto;
 
-  @media (max-width: ${BP_TABLET_MAX}) {
-    display: none;
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    top: 670px;
+    width: 11vw;
+  }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    top: 570px;
+    width: 15vw;
+  }
+`;
+
+const StyledTopRightIcon = styled(Icon)`
+  ${patternStyle}
+  position: absolute;
+  top: 130px;
+  right: -1.5vw;
+  transform: rotate(16deg);
+  width: 7vw;
+  height: auto;
+
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    top: 130px;
+    right: -3vw;
+    width: 10vw;
+  }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    top: 120px;
+    right: -5vw;
+    width: 12vw;
+  }
+
+  @media (max-width: 500px) {
+    top: 100px;
+    right: -7vw;
+    width: 14vw;
+  }
+`;
+
+const StyledCenterRightIcon = styled(Icon)`
+  ${patternStyle}
+  position: absolute;
+  top: 475px;
+  right: 18vw;
+  transform: rotate(-4deg);
+  width: 6vw;
+  height: auto;
+
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    top: 570px;
+    right: 15vw;
+    width: 9vw;
+  }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    top: 570px;
+    right: 13vw;
+    width: 13vw;
   }
 `;
 
@@ -160,6 +216,8 @@ const BackgroundPattern = (): JSX.Element => (
     <StyledTopLeftIcon />
     <StyledCenterLeftIcon />
     <StyledBottomLeftIcon />
+    <StyledTopRightIcon />
+    <StyledCenterRightIcon />
   </StyledContainer>
 );
 

@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import { routes } from 'routes';
 import Input from 'components/atoms/Input/Input';
 import { fontSettings } from 'theme/fontSettings';
+import { BP_MOBILE_MAX, BP_TABLET_MAX, BP_TABLET_MIN } from 'app_constants';
 
 const Container = styled.div`
   display: flex;
@@ -23,6 +24,14 @@ const StyledAppLogo = styled(AppLogo)`
   width: 180px;
   height: auto;
   fill: ${({ theme }) => theme.MAIN};
+
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    margin-top: 80px;
+  }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    margin-top: 40px;
+  }
 `;
 
 const FormContainer = styled.div`
