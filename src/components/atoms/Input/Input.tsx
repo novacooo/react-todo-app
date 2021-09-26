@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { BORDER_RADIUS, TRANSITION_TIME } from 'app_constants';
+import { BORDER_RADIUS, BP_MOBILE_MAX, TRANSITION_TIME } from 'app_constants';
 import IconButton from '../IconButton/IconButton';
 import { fontSettings } from 'theme/fontSettings';
 import { ReactComponent as ShowIcon } from 'assets/icons/show.svg';
@@ -37,6 +37,10 @@ const StyledContainer = styled.div`
   &:focus-within {
     border-color: ${({ theme }) => theme.BORDER_HOVER};
   }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    height: 48px;
+  }
 `;
 
 const StyledIconContainer = styled.div`
@@ -65,6 +69,10 @@ const StyledInput = styled.input<IStyledInputProps>`
 
   &::placeholder {
     color: ${({ theme }) => theme.TEXT_SECONDARY};
+  }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    font-size: ${fontSettings.sizesMobile.m};
   }
 `;
 

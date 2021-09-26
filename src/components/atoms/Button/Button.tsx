@@ -33,7 +33,7 @@ const StyledButton = styled.button`
 
   @media (max-width: ${BP_MOBILE_MAX}) {
     padding: 0 23px;
-    height: 42px;
+    height: 44px;
     font-size: ${fontSettings.sizesMobile.m};
   }
 `;
