@@ -1,6 +1,6 @@
-import { BORDER_RADIUS, TRANSITION_TIME } from 'app_constants';
 import React from 'react';
 import styled from 'styled-components';
+import { BORDER_RADIUS, BP_MOBILE_MAX, TRANSITION_TIME } from 'app_constants';
 import { fontSettings } from 'theme/fontSettings';
 
 interface IButtonProps {
@@ -29,6 +29,12 @@ const StyledButton = styled.button`
   &:hover {
     cursor: pointer;
     background-color: ${({ theme }) => theme.MAIN_HOVER};
+  }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    padding: 0 23px;
+    height: 42px;
+    font-size: ${fontSettings.sizesMobile.m};
   }
 `;
 

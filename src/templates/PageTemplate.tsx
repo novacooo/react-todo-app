@@ -9,7 +9,7 @@ import {
   MARGIN_SIDE_MOBILE,
   MARGIN_SIDE_TABLET,
 } from 'app_constants';
-import BackgroundPattern from 'components/atoms/BackgroundPattern/BackgroundPattern';
+import BackgroundPattern from 'components/molecules/BackgroundPattern/BackgroundPattern';
 
 interface IPageTemplateProps {
   children: JSX.Element;
