@@ -9,28 +9,32 @@ import Button from 'components/atoms/Button/Button';
 import { Link } from 'react-router-dom';
 import { routes } from 'routes';
 import Input from 'components/atoms/Input/Input';
-import { fontSettings } from 'theme/fontSettings';
 import { BP_MOBILE_MAX, BP_TABLET_MAX, BP_TABLET_MIN } from 'app_constants';
+import LoginHeader from 'components/atoms/LoginHeader/LoginHeader';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 140px 0;
   width: 100%;
+
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    padding: 100px 0;
+  }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    padding: 50px 0;
+  }
 `;
 
 const StyledAppLogo = styled(AppLogo)`
-  margin-top: 140px;
   width: 180px;
   height: auto;
   fill: ${({ theme }) => theme.MAIN};
 
-  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
-    margin-top: 80px;
-  }
-
   @media (max-width: ${BP_MOBILE_MAX}) {
-    margin-top: 40px;
+    width: 140px;
   }
 `;
 
@@ -41,12 +45,15 @@ const FormContainer = styled.div`
   gap: 40px;
   width: 100%;
   max-width: 400px;
-`;
 
-const Header = styled.h2`
-  color: ${({ theme }) => theme.MAIN};
-  font-size: ${fontSettings.sizesDesktop.xl};
-  font-weight: ${fontSettings.weights.semiBold};
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    margin-top: 60px;
+  }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    margin-top: 40px;
+    gap: 30px;
+  }
 `;
 
 const InputsContainer = styled.div`
@@ -54,6 +61,10 @@ const InputsContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   width: 100%;
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    gap: 15px;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -73,7 +84,7 @@ const LoginPage = (): JSX.Element => {
       <Container>
         <StyledAppLogo />
         <FormContainer>
-          <Header>Sign In</Header>
+          <LoginHeader>Sign In</LoginHeader>
           <InputsContainer>
             <Input icon={EmailIcon} placeholder="Email address" />
             <Input type="password" icon={LockIcon} placeholder="Password" />
