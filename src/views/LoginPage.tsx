@@ -11,6 +11,7 @@ import { routes } from 'routes';
 import Input from 'components/atoms/Input/Input';
 import { BP_MOBILE_MAX, BP_TABLET_MAX, BP_TABLET_MIN } from 'app_constants';
 import LoginHeader from 'components/atoms/LoginHeader/LoginHeader';
+import CheckBox from 'components/atoms/CheckBox/CheckBox';
 
 const Container = styled.div`
   display: flex;
@@ -67,6 +68,11 @@ const InputsContainer = styled.div`
   }
 `;
 
+const StyledCheckBox = styled(CheckBox)`
+  align-self: flex-start;
+  margin-left: 10px;
+`;
+
 const StyledLink = styled(Link)`
   align-self: center;
   width: 100%;
@@ -89,6 +95,7 @@ const LoginPage = (): JSX.Element => {
             <Input icon={EmailIcon} placeholder="Email address" />
             <Input type="password" icon={LockIcon} placeholder="Password" />
           </InputsContainer>
+          <StyledCheckBox text="Remember me" />
           <StyledLink to={routes.home}>
             <StyledButton icon={ArrowRightIcon}>Login</StyledButton>
           </StyledLink>
