@@ -53,7 +53,6 @@ const FormContainer = styled.div`
 
   @media (max-width: ${BP_MOBILE_MAX}) {
     margin-top: 40px;
-    gap: 30px;
   }
 `;
 
@@ -62,10 +61,6 @@ const InputsContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   width: 100%;
-
-  @media (max-width: ${BP_MOBILE_MAX}) {
-    gap: 15px;
-  }
 `;
 
 const StyledCheckBox = styled(CheckBox)`
