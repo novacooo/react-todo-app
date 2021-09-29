@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { BP_MOBILE_MAX, TRANSITION_TIME } from 'app_constants';
@@ -64,7 +65,9 @@ const StyledLabel = styled.label<IStyledBoxProps>`
     cursor: pointer;
 
     ${StyledBox} {
-      border-color: ${({ checked, theme }) => (checked ? theme.MAIN : theme.BORDER_HOVER)};
+      border-color: ${({ checked, theme }) => (checked ? theme.MAIN_HOVER : theme.BORDER_HOVER)};
+      background-color: ${({ checked, theme }) =>
+        checked ? theme.MAIN_HOVER : theme.BG_SECONDARY};
     }
   }
 

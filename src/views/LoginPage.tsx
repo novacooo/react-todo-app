@@ -12,27 +12,36 @@ import Input from 'components/atoms/Input/Input';
 import { BP_MOBILE_MAX, BP_TABLET_MAX, BP_TABLET_MIN } from 'app_constants';
 import LoginHeader from 'components/atoms/LoginHeader/LoginHeader';
 import CheckBox from 'components/atoms/CheckBox/CheckBox';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
+import ParapraphLink from 'components/atoms/ParapraphLink/ParapraphLink';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 140px 0;
+  gap: 80px;
+  padding: 120px 0;
   width: 100%;
 
   @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    gap: 60px;
     padding: 100px 0;
   }
 
   @media (max-width: ${BP_MOBILE_MAX}) {
+    gap: 40px;
     padding: 50px 0;
   }
 `;
 
 const StyledAppLogo = styled(AppLogo)`
-  width: 180px;
+  width: 210px;
   height: auto;
   fill: ${({ theme }) => theme.MAIN};
+
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    width: 180px;
+  }
 
   @media (max-width: ${BP_MOBILE_MAX}) {
     width: 140px;
@@ -42,18 +51,9 @@ const StyledAppLogo = styled(AppLogo)`
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 80px;
   gap: 40px;
   width: 100%;
   max-width: 400px;
-
-  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
-    margin-top: 60px;
-  }
-
-  @media (max-width: ${BP_MOBILE_MAX}) {
-    margin-top: 40px;
-  }
 `;
 
 const InputsContainer = styled.div`
@@ -79,6 +79,12 @@ const StyledButton = styled(Button)`
   width: 100%;
 `;
 
+const RegisterContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
 const LoginPage = (): JSX.Element => {
   return (
     <PageTemplate showPattern>
@@ -95,6 +101,10 @@ const LoginPage = (): JSX.Element => {
             <StyledButton icon={ArrowRightIcon}>Login</StyledButton>
           </StyledLink>
         </FormContainer>
+        <RegisterContainer>
+          <Paragraph>Don’t have an account?</Paragraph>
+          <ParapraphLink to={routes.home}>Register</ParapraphLink>
+        </RegisterContainer>
       </Container>
     </PageTemplate>
   );
