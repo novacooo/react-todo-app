@@ -6,8 +6,9 @@ const GlobalStyle = createGlobalStyle`
   html.${THEME_TRANSITION_CLASS} *,
   html.${THEME_TRANSITION_CLASS} *:before,
   html.${THEME_TRANSITION_CLASS} *:after {
-    transition: all ${THEME_TRANSITION_TIME}ms !important;
-    transition-delay: 0 !important;
+    /* transition: all ${THEME_TRANSITION_TIME}ms !important;
+    transition-delay: 0 !important; */
+    transition: none !important;
   }
 
   *, *::before, *::after {

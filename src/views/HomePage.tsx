@@ -1,36 +1,33 @@
+import CategoriesButton from 'components/atoms/CategoryButton/CategoryButton';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { routes } from 'routes';
 import styled from 'styled-components';
 import PageTemplate from 'templates/PageTemplate';
-import { fontSettings } from 'theme/fontSettings';
 
 const Container = styled.div`
-  padding-top: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 134px 0;
+  width: 100%;
 `;
 
-const StyledHeader = styled.h1`
-  color: ${({ theme }) => theme.TEXT_PRIMARY};
-  font-size: ${fontSettings.sizesDesktop.xl};
-  font-weight: ${fontSettings.weights.semiBold};
-`;
-
-const StyledNavLink = styled(NavLink)`
-  margin-top: 30px;
-  color: ${({ theme }) => theme.TEXT_SECONDARY};
-  font-size: ${fontSettings.sizesDesktop.m};
-  font-weight: ${fontSettings.weights.medium};
+const CategoriesContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 `;
 
 const HomePage = (): JSX.Element => {
   return (
     <PageTemplate>
       <Container>
-        <StyledHeader>HomePage</StyledHeader>
-        <StyledNavLink to={routes.home}>{'<'}- HomePage</StyledNavLink>
+        <CategoriesContainer>
+          <CategoriesButton active>All categories</CategoriesButton>
+          <CategoriesButton>Work</CategoriesButton>
+          <CategoriesButton>School</CategoriesButton>
+          <CategoriesButton>House</CategoriesButton>
+        </CategoriesContainer>
       </Container>
     </PageTemplate>
   );

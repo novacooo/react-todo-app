@@ -15,6 +15,7 @@ import { actionCreators, StateType } from 'state';
 import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ColorButton from 'components/atoms/ColorButton/ColorButton';
+import { toggleTransitionClass } from 'helpers';
 
 const PaletteHoverContainer = styled.div`
   visibility: hidden;
@@ -76,7 +77,7 @@ const ThemeButton = (): JSX.Element => {
     localStorage.setItem(LS_KEY_THEME_COLOR, color);
     switchTheme(appThemes[mode][color]);
 
-    // toggleTransitionClass();
+    toggleTransitionClass();
   };
 
   return (

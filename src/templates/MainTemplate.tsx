@@ -15,6 +15,7 @@ import {
   THEME_MODE_DARK,
   THEME_MODE_LIGHT,
 } from 'app_constants';
+import { toggleTransitionClass } from 'helpers';
 
 interface IProps extends RouteComponentProps {
   children: JSX.Element;
@@ -41,7 +42,7 @@ const MainTemplate = ({ children }: IProps) => {
       switchTheme(appThemes[mode][color]);
     }
 
-    // toggleTransitionClass();
+    toggleTransitionClass();
   };
 
   useEffect(() => {
