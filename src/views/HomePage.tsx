@@ -43,7 +43,12 @@ const StyledButton = styled(Button)`
     background-color: ${({ theme }) => theme.MAIN_TRANSPARENT};
   }
 
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    padding: 11px 22px;
+  }
+
   @media (max-width: ${BP_MOBILE_MAX}) {
+    padding: 10px 18px;
     font-size: ${fontSettings.sizesMobile.s};
   }
 `;
