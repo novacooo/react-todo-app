@@ -1,4 +1,10 @@
-import { BORDER_RADIUS, TRANSITION_TIME } from 'app_constants';
+import {
+  BORDER_RADIUS,
+  BP_MOBILE_MAX,
+  BP_TABLET_MAX,
+  BP_TABLET_MIN,
+  TRANSITION_TIME,
+} from 'app_constants';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -52,12 +58,32 @@ const IconButton = ({
     width: ${iconSize}px;
     height: ${iconSize}px;
     fill: ${({ theme }) => theme.MAIN_ITEMS};
+
+    @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+      width: ${iconSize - 2}px;
+      height: ${iconSize - 2}px;
+    }
+
+    @media (max-width: ${BP_MOBILE_MAX}) {
+      width: ${iconSize - 3}px;
+      height: ${iconSize - 3}px;
+    }
   `;
 
   const StyledIconActive = styled(iconActive)`
     width: ${iconSize}px;
     height: ${iconSize}px;
     fill: ${({ theme }) => theme.MAIN};
+
+    @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+      width: ${iconSize - 2}px;
+      height: ${iconSize - 2}px;
+    }
+
+    @media (max-width: ${BP_MOBILE_MAX}) {
+      width: ${iconSize - 2}px;
+      height: ${iconSize - 2}px;
+    }
   `;
 
   const handleClick = (): void => {
