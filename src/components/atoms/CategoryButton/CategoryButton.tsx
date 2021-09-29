@@ -1,4 +1,10 @@
-import { BORDER_RADIUS, BP_MOBILE_MAX, TRANSITION_TIME } from 'app_constants';
+import {
+  BORDER_RADIUS,
+  BP_MOBILE_MAX,
+  BP_TABLET_MAX,
+  BP_TABLET_MIN,
+  TRANSITION_TIME,
+} from 'app_constants';
 import styled from 'styled-components';
 import { fontSettings } from 'theme/fontSettings';
 
@@ -26,8 +32,14 @@ const CategoriesButton = styled.button<ICategoriesButtonProps>`
     background-color: ${({ theme, active }) => (active ? theme.MAIN_TRANSPARENT : theme.BG_HOVER)};
   }
 
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    padding: 11px 22px;
+    font-size: ${fontSettings.sizesDesktop.m};
+  }
+
   @media (max-width: ${BP_MOBILE_MAX}) {
-    font-size: ${fontSettings.sizesMobile.l};
+    padding: 10px 18px;
+    font-size: ${fontSettings.sizesMobile.m};
   }
 `;
 
