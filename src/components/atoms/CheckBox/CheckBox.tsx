@@ -88,6 +88,11 @@ const StyledHiddenInput = styled.input`
   position: absolute;
   white-space: nowrap;
   width: 1px;
+
+  &:focus ~ ${StyledBox} {
+    border-color: ${({ checked, theme }) => (checked ? theme.MAIN_HOVER : theme.BORDER_HOVER)};
+    background-color: ${({ checked, theme }) => (checked ? theme.MAIN_HOVER : theme.BG_SECONDARY)};
+  }
 `;
 
 const CheckBox = ({ text, checked, className }: ICheckBoxProps): JSX.Element => {
