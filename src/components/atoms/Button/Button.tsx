@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from 'react';
 import styled from 'styled-components';
 import { BORDER_RADIUS, BP_MOBILE_MAX, TRANSITION_TIME } from 'app_constants';
@@ -7,6 +8,7 @@ interface IButtonProps {
   children: string;
   icon?: React.FC;
   iconSize?: number;
+  iconMargin?: number;
   position?: 'left' | 'right';
   className?: string;
   onClick?: () => void;
@@ -42,6 +44,7 @@ const Button = ({
   children,
   icon,
   iconSize = 14,
+  iconMargin = 15,
   position = 'right',
   className,
   onClick,
@@ -53,7 +56,8 @@ const Button = ({
       }
 
       const StyledIcon = styled(icon)<IStyledIconProps>`
-        margin: ${({ position }) => (position === 'right' ? '0 0 0 15px' : '0 15px 0 0')};
+        margin: ${({ position }) =>
+          position === 'right' ? `0 0 0 ${iconMargin}px` : `0 ${iconMargin}px 0 0`};
         width: ${iconSize}px;
         height: ${iconSize}px;
         fill: currentColor;
