@@ -14,7 +14,11 @@ interface IContainer {
   hoverBackground?: string;
 }
 
-interface IIconButton extends IContainer {
+interface IIconProps {
+  iconColor?: string;
+}
+
+interface IIconButton extends IContainer, IIconProps {
   icon: React.FC;
   iconActive?: React.FC;
   iconSize?: number;
@@ -54,14 +58,15 @@ const IconButton = ({
   active = false,
   iconActive = icon,
   iconSize = 22,
+  iconColor,
   hoverBackground,
   className,
   onClick,
 }: IIconButton): JSX.Element => {
-  const StyledIcon = styled(icon)`
+  const StyledIcon = styled(icon)<IIconProps>`
     width: ${iconSize}px;
     height: ${iconSize}px;
-    fill: ${({ theme }) => theme.MAIN_ITEMS};
+    fill: ${({ theme, iconColor }) => (iconColor ? iconColor : theme.MAIN_ITEMS)};
 
     @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
       width: ${iconSize - 2}px;
@@ -74,10 +79,10 @@ const IconButton = ({
     }
   `;
 
-  const StyledIconActive = styled(iconActive)`
+  const StyledIconActive = styled(iconActive)<IIconProps>`
     width: ${iconSize}px;
     height: ${iconSize}px;
-    fill: ${({ theme }) => theme.MAIN};
+    fill: ${({ theme, iconColor }) => (iconColor ? iconColor : theme.MAIN)};
 
     @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
       width: ${iconSize - 2}px;
@@ -101,7 +106,7 @@ const IconButton = ({
       size={size}
       active={active}
       hoverBackground={hoverBackground}>
-      {active ? <StyledIconActive /> : <StyledIcon />}
+      {active ? <StyledIconActive iconColor={iconColor} /> : <StyledIcon iconColor={iconColor} />}
     </Container>
   );
 };

@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import {
   LS_KEY_THEME_MODE,
   THEME_MODE_AUTO,
@@ -17,7 +18,15 @@ import { appThemes, ThemeModeType } from 'theme';
 import { useThemeDetector } from 'hooks';
 import { toggleTransitionClass } from 'helpers';
 
-const Container = styled.button`
+interface IIconProps {
+  iconColor?: string;
+}
+
+interface IModeButtonProps extends IIconProps {
+  hoverBackground?: string;
+}
+
+const Container = styled.button<IModeButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,32 +41,33 @@ const Container = styled.button`
   &:hover,
   &:focus {
     cursor: pointer;
-    background-color: ${({ theme }) => theme.BG_HOVER_MAIN};
+    background-color: ${({ theme, hoverBackground }) =>
+      hoverBackground ? hoverBackground : theme.BG_HOVER_MAIN};
   }
 `;
 
-const AutoIcon = styled(AutoModeIcon)`
+const AutoIcon = styled(AutoModeIcon)<IIconProps>`
   width: 16px;
   height: 16px;
-  fill: ${({ theme }) => theme.MAIN_ITEMS};
+  fill: ${({ theme, iconColor }) => (iconColor ? iconColor : theme.MAIN_ITEMS)};
   transition: fill ${TRANSITION_TIME};
 `;
 
-const LightIcon = styled(LightModeIcon)`
+const LightIcon = styled(LightModeIcon)<IIconProps>`
   width: 24px;
   height: 24px;
-  fill: ${({ theme }) => theme.MAIN_ITEMS};
+  fill: ${({ theme, iconColor }) => (iconColor ? iconColor : theme.MAIN_ITEMS)};
   transition: fill ${TRANSITION_TIME};
 `;
 
-const DarkIcon = styled(DarkModeIcon)`
+const DarkIcon = styled(DarkModeIcon)<IIconProps>`
   width: 20px;
   height: 20px;
-  fill: ${({ theme }) => theme.MAIN_ITEMS};
+  fill: ${({ theme, iconColor }) => (iconColor ? iconColor : theme.MAIN_ITEMS)};
   transition: fill ${TRANSITION_TIME};
 `;
 
-const ModeButton = (): JSX.Element => {
+const ModeButton = ({ hoverBackground, iconColor }: IModeButtonProps): JSX.Element => {
   const dispatch = useDispatch();
   const theme = useSelector((state: StateType) => state.theme);
   const isSystemDarkTheme = useThemeDetector();
@@ -98,17 +108,21 @@ const ModeButton = (): JSX.Element => {
   const renderIcon = (themeMode: ThemeModeType) => {
     switch (themeMode) {
       case THEME_MODE_AUTO:
-        return <AutoIcon />;
+        return <AutoIcon iconColor={iconColor} />;
 
       case THEME_MODE_LIGHT:
-        return <LightIcon />;
+        return <LightIcon iconColor={iconColor} />;
 
       case THEME_MODE_DARK:
-        return <DarkIcon />;
+        return <DarkIcon iconColor={iconColor} />;
     }
   };
 
-  return <Container onClick={changeMode}>{renderIcon(iconMode)}</Container>;
+  return (
+    <Container onClick={changeMode} hoverBackground={hoverBackground}>
+      {renderIcon(iconMode)}
+    </Container>
+  );
 };
 
 export default ModeButton;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 import { ReactComponent as AppLogo } from 'assets/logo/app_logo.svg';
 import { ReactComponent as EmailIcon } from 'assets/icons/email.svg';
 import { ReactComponent as LockIcon } from 'assets/icons/lock.svg';
@@ -14,11 +15,15 @@ import LoginHeader from 'components/atoms/LoginHeader/LoginHeader';
 import CheckBox from 'components/atoms/CheckBox/CheckBox';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import ParapraphLink from 'components/atoms/ParapraphLink/ParapraphLink';
+import ThemeButton from 'components/molecules/ThemeButton/ThemeButton';
+import ModeButton from 'components/molecules/ModeButton/ModeButton';
+import { StateType } from 'state';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   gap: 80px;
   padding: 120px 0;
   width: 100%;
@@ -32,6 +37,14 @@ const Container = styled.div`
     gap: 40px;
     padding: 50px 0;
   }
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 35px;
+  right: 0;
 `;
 
 const StyledAppLogo = styled(AppLogo)`
@@ -86,9 +99,15 @@ const RegisterContainer = styled.div`
 `;
 
 const LoginPage = (): JSX.Element => {
+  const theme = useSelector((state: StateType) => state.theme);
+
   return (
     <PageTemplate showPattern>
       <Container>
+        <ButtonsContainer>
+          <ThemeButton hoverBackground={theme.BG_HOVER} iconColor={theme.ICON_SECONDARY} />
+          <ModeButton hoverBackground={theme.BG_HOVER} iconColor={theme.ICON_SECONDARY} />
+        </ButtonsContainer>
         <StyledAppLogo />
         <FormContainer>
           <LoginHeader>Sign In</LoginHeader>

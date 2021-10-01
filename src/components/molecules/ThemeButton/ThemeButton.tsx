@@ -17,6 +17,11 @@ import { bindActionCreators } from 'redux';
 import ColorButton from 'components/atoms/ColorButton/ColorButton';
 import { toggleTransitionClass } from 'helpers';
 
+interface IThemeButtonProps {
+  hoverBackground?: string;
+  iconColor?: string;
+}
+
 const PaletteHoverContainer = styled.div`
   visibility: hidden;
   opacity: 0;
@@ -65,7 +70,7 @@ const PaletteButtonContainer = styled.div`
   }
 `;
 
-const ThemeButton = (): JSX.Element => {
+const ThemeButton = ({ hoverBackground, iconColor }: IThemeButtonProps): JSX.Element => {
   const dispatch = useDispatch();
   const theme = useSelector((state: StateType) => state.theme);
 
@@ -82,7 +87,7 @@ const ThemeButton = (): JSX.Element => {
 
   return (
     <PaletteButtonContainer>
-      <IconButton icon={PaletteIcon} />
+      <IconButton icon={PaletteIcon} iconColor={iconColor} hoverBackground={hoverBackground} />
       <PaletteHoverContainer>
         <PaletteContainer>
           <ColorButton
