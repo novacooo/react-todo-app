@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/react-todo-app/static/js/main.6535d349.chunk.js",
-    "main.js.map": "/react-todo-app/static/js/main.6535d349.chunk.js.map",
+    "main.js": "/react-todo-app/static/js/main.ca0c4e82.chunk.js",
+    "main.js.map": "/react-todo-app/static/js/main.ca0c4e82.chunk.js.map",
     "runtime-main.js": "/react-todo-app/static/js/runtime-main.494ccf83.js",
     "runtime-main.js.map": "/react-todo-app/static/js/runtime-main.494ccf83.js.map",
-    "static/js/2.7ec1e585.chunk.js": "/react-todo-app/static/js/2.7ec1e585.chunk.js",
-    "static/js/2.7ec1e585.chunk.js.map": "/react-todo-app/static/js/2.7ec1e585.chunk.js.map",
+    "static/js/2.d372e7ac.chunk.js": "/react-todo-app/static/js/2.d372e7ac.chunk.js",
+    "static/js/2.d372e7ac.chunk.js.map": "/react-todo-app/static/js/2.d372e7ac.chunk.js.map",
     "index.html": "/react-todo-app/index.html",
-    "static/js/2.7ec1e585.chunk.js.LICENSE.txt": "/react-todo-app/static/js/2.7ec1e585.chunk.js.LICENSE.txt",
+    "static/js/2.d372e7ac.chunk.js.LICENSE.txt": "/react-todo-app/static/js/2.d372e7ac.chunk.js.LICENSE.txt",
     "static/media/add.525bcff8.svg": "/react-todo-app/static/media/add.525bcff8.svg",
     "static/media/app_logo.15089ea2.svg": "/react-todo-app/static/media/app_logo.15089ea2.svg",
     "static/media/arrow_right.af2b9b3b.svg": "/react-todo-app/static/media/arrow_right.af2b9b3b.svg",
@@ -39,6 +39,7 @@
     "static/media/novaco_logo.fc638bbb.svg": "/react-todo-app/static/media/novaco_logo.fc638bbb.svg",
     "static/media/palette.95980c6c.svg": "/react-todo-app/static/media/palette.95980c6c.svg",
     "static/media/show.61aa94a2.svg": "/react-todo-app/static/media/show.61aa94a2.svg",
+    "static/media/sort.9f1e69e9.svg": "/react-todo-app/static/media/sort.9f1e69e9.svg",
     "static/media/top_left_shape.bc6e7f5d.svg": "/react-todo-app/static/media/top_left_shape.bc6e7f5d.svg",
     "static/media/top_right_shape.9459dc60.svg": "/react-todo-app/static/media/top_right_shape.9459dc60.svg",
     "static/media/twitter.ae4c630b.svg": "/react-todo-app/static/media/twitter.ae4c630b.svg",
@@ -46,7 +47,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.494ccf83.js",
-    "static/js/2.7ec1e585.chunk.js",
-    "static/js/main.6535d349.chunk.js"
+    "static/js/2.d372e7ac.chunk.js",
+    "static/js/main.ca0c4e82.chunk.js"
   ]
 }
