@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PageTemplate from 'templates/PageTemplate';
 import { BP_MOBILE_MAX, BP_TABLET_MAX, BP_TABLET_MIN } from 'app_constants';
 import CategoriesBar from 'components/molecules/CategoriesBar/CategoriesBar';
 import MenuBar from 'components/molecules/MenuBar/MenuBar';
+import Header from 'components/atoms/Header/Header';
 
 const Container = styled.div`
   display: flex;
@@ -23,11 +24,18 @@ const Container = styled.div`
 `;
 
 const HomePage = (): JSX.Element => {
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleIsActive = () => setIsActive(!isActive);
+
   return (
     <PageTemplate>
       <Container>
         <CategoriesBar showAddButton />
         <MenuBar newItem filter board />
+        <Header onClick={toggleIsActive} active={isActive}>
+          Work
+        </Header>
       </Container>
     </PageTemplate>
   );
