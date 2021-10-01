@@ -45,6 +45,14 @@ const ButtonsContainer = styled.div`
   position: absolute;
   top: 35px;
   right: 0;
+
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    top: 20px;
+  }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    display: none;
+  }
 `;
 
 const StyledAppLogo = styled(AppLogo)`

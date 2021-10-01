@@ -28,7 +28,8 @@ const StyledButton = styled.button`
   font-weight: ${fontSettings.weights.semiBold};
   transition: background-color ${TRANSITION_TIME};
 
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
     background-color: ${({ theme }) => theme.MAIN_HOVER};
   }
