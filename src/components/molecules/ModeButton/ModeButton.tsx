@@ -32,7 +32,7 @@ const Container = styled.button`
   &:hover,
   &:focus {
     cursor: pointer;
-    background-color: ${({ theme }) => theme.BG_HOVER};
+    background-color: ${({ theme }) => theme.BG_HOVER_MAIN};
   }
 `;
 

@@ -1,5 +1,5 @@
 import Button from 'components/atoms/Button/Button';
-import CategoriesButton from 'components/atoms/CategoryButton/CategoryButton';
+import CategoryButton from 'components/atoms/CategoryButton/CategoryButton';
 import React from 'react';
 import styled from 'styled-components';
 import PageTemplate from 'templates/PageTemplate';
@@ -31,7 +31,7 @@ const CategoriesContainer = styled.div`
   gap: 10px;
 `;
 
-const StyledButton = styled(Button)`
+const StyledAddButton = styled(Button)`
   height: auto;
   padding: 12px 24px;
   background-color: ${({ theme }) => theme.BG_PRIMARY};
@@ -58,13 +58,13 @@ const HomePage = (): JSX.Element => {
     <PageTemplate>
       <Container>
         <CategoriesContainer>
-          <CategoriesButton active>All categories</CategoriesButton>
-          <CategoriesButton>Work</CategoriesButton>
-          <CategoriesButton>School</CategoriesButton>
-          <CategoriesButton>House</CategoriesButton>
-          <StyledButton icon={AddIcon} iconSize={12} iconMargin={12} position="left">
+          <CategoryButton active>All categories</CategoryButton>
+          <CategoryButton>Work</CategoryButton>
+          <CategoryButton>School</CategoryButton>
+          <CategoryButton>House</CategoryButton>
+          <StyledAddButton icon={AddIcon} iconSize={12} iconMargin={12} position="left">
             Add Category
-          </StyledButton>
+          </StyledAddButton>
         </CategoriesContainer>
       </Container>
     </PageTemplate>

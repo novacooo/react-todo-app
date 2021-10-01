@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import {
   BORDER_RADIUS,
   BP_MOBILE_MAX,
@@ -12,7 +13,7 @@ interface ICategoriesButtonProps {
   active?: boolean;
 }
 
-const CategoriesButton = styled.button<ICategoriesButtonProps>`
+const CategoryButton = styled.button<ICategoriesButtonProps>`
   padding: 12px 24px;
   background-color: ${({ theme, active }) => (active ? theme.MAIN_TRANSPARENT : theme.BG_PRIMARY)};
   border: none;
@@ -43,4 +44,4 @@ const CategoriesButton = styled.button<ICategoriesButtonProps>`
   }
 `;
 
-export default CategoriesButton;
+export default CategoryButton;

@@ -5,6 +5,8 @@ import IconButton from '../IconButton/IconButton';
 import { fontSettings } from 'theme/fontSettings';
 import { ReactComponent as ShowIcon } from 'assets/icons/show.svg';
 import { ReactComponent as HideIcon } from 'assets/icons/hide.svg';
+import { useSelector } from 'react-redux';
+import { StateType } from 'state';
 
 type InputType = 'text' | 'password';
 
@@ -76,14 +78,11 @@ const StyledInput = styled.input<IStyledInputProps>`
   }
 `;
 
-// TODO: Change hover bg
 const StyledPasswordButton = styled(IconButton)`
   position: absolute;
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
 
   > svg {
     fill: ${({ theme }) => theme.ICON_SECONDARY};
@@ -98,6 +97,7 @@ const Input = ({
   className,
 }: IInputProps): JSX.Element => {
   const [actualType, setActualType] = useState<InputType>(type);
+  const theme = useSelector((state: StateType) => state.theme);
 
   const paddingLeft = 20 + (icon ? 33 : 0);
   const paddingRight = type === 'password' ? 55 : 20;
@@ -134,8 +134,10 @@ const Input = ({
       {type === 'password' && (
         <StyledPasswordButton
           onClick={togglePassword}
+          size={40}
           icon={actualType === 'password' ? ShowIcon : HideIcon}
           iconSize={20}
+          hoverBackground={theme.BG_HOVER}
         />
       )}
     </StyledContainer>

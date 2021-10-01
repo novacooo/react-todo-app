@@ -9,7 +9,9 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 interface IContainer {
+  size?: number;
   active?: boolean;
+  hoverBackground?: string;
 }
 
 interface IIconButton extends IContainer {
@@ -25,8 +27,8 @@ const Container = styled.button<IContainer>`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  width: 48px;
-  height: 48px;
+  width: ${({ size }) => (size ? `${size}px` : '48px')};
+  height: ${({ size }) => (size ? `${size}px` : '48px')};
   border: none;
   border-radius: ${({ active }) => (active ? BORDER_RADIUS : '24px')};
   background-color: ${({ active, theme }) => (active ? theme.MAIN_ITEMS : 'transparent')};
@@ -36,21 +38,23 @@ const Container = styled.button<IContainer>`
     cursor: pointer;
   }
 
-  ${({ active, theme }) =>
+  ${({ active, theme, hoverBackground }) =>
     !active &&
     css`
       &:hover,
       &:focus {
-        background-color: ${theme.BG_HOVER};
+        background-color: ${hoverBackground ? hoverBackground : theme.BG_HOVER_MAIN};
       }
     `}
 `;
 
 const IconButton = ({
   icon,
+  size,
   active = false,
   iconActive = icon,
   iconSize = 22,
+  hoverBackground,
   className,
   onClick,
 }: IIconButton): JSX.Element => {
@@ -91,7 +95,12 @@ const IconButton = ({
   };
 
   return (
-    <Container active={active} onClick={handleClick} className={className}>
+    <Container
+      className={className}
+      onClick={handleClick}
+      size={size}
+      active={active}
+      hoverBackground={hoverBackground}>
       {active ? <StyledIconActive /> : <StyledIcon />}
     </Container>
   );
