@@ -6,6 +6,10 @@ import { ReactComponent as AddIcon } from 'assets/icons/add.svg';
 import { fontSettings } from 'theme/fontSettings';
 import { BP_MOBILE_MAX, BP_TABLET_MAX, BP_TABLET_MIN } from 'app_constants';
 
+interface ICategoriesBarProps {
+  showAddButton?: boolean;
+}
+
 const CategoriesContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -36,15 +40,17 @@ const StyledAddButton = styled(Button)`
   }
 `;
 
-const CategoriesBar = (): JSX.Element => (
+const CategoriesBar = ({ showAddButton }: ICategoriesBarProps): JSX.Element => (
   <CategoriesContainer>
     <CategoryButton active>All categories</CategoryButton>
     <CategoryButton>Work</CategoryButton>
     <CategoryButton>School</CategoryButton>
     <CategoryButton>House</CategoryButton>
-    <StyledAddButton icon={AddIcon} iconSize={12} iconMargin={12} position="left">
-      Add Category
-    </StyledAddButton>
+    {showAddButton && (
+      <StyledAddButton icon={AddIcon} iconSize={12} iconMargin={12} position="left">
+        Add Category
+      </StyledAddButton>
+    )}
   </CategoriesContainer>
 );
 

@@ -26,8 +26,8 @@ const HomePage = (): JSX.Element => {
   return (
     <PageTemplate>
       <Container>
-        <CategoriesBar />
-        <MenuBar />
+        <CategoriesBar showAddButton />
+        <MenuBar newItem filter board />
       </Container>
     </PageTemplate>
   );

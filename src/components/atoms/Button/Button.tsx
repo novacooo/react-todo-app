@@ -34,6 +34,7 @@ const StyledButton = styled.button<IStyledButtonProps>`
   color: ${({ theme, secondary }) => (secondary ? theme.TEXT_SECONDARY : theme.MAIN_ITEMS)};
   font-size: ${fontSettings.sizesDesktop.m};
   font-weight: ${fontSettings.weights.semiBold};
+  white-space: nowrap;
   transition: background-color ${TRANSITION_TIME}, border-color ${TRANSITION_TIME};
 
   &:hover,

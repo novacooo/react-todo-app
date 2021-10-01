@@ -4,21 +4,38 @@ import Button from 'components/atoms/Button/Button';
 import { ReactComponent as AddIcon } from 'assets/icons/add.svg';
 import { ReactComponent as FilterIcon } from 'assets/icons/filter.svg';
 import { ReactComponent as DropDownIcon } from 'assets/icons/drop_down.svg';
+import { ReactComponent as SortIcon } from 'assets/icons/sort.svg';
+
+export interface IMenuButtonsProps {
+  newItem?: boolean;
+  filter?: boolean;
+  board?: boolean;
+  sort?: boolean;
+}
 
 const ButtonsContainer = styled.div`
   display: flex;
   gap: 20px;
 `;
 
-const MenuButtons = (): JSX.Element => (
+const MenuButtons = ({ newItem, filter, board, sort }: IMenuButtonsProps): JSX.Element => (
   <ButtonsContainer>
-    <Button icon={AddIcon}>New Item</Button>
-    <Button secondary icon={FilterIcon} iconSize={18}>
-      Filter
-    </Button>
-    <Button secondary icon={DropDownIcon} iconSize={10}>
-      Board
-    </Button>
+    {newItem && <Button icon={AddIcon}>New Item</Button>}
+    {filter && (
+      <Button secondary icon={FilterIcon} iconSize={18}>
+        Filter
+      </Button>
+    )}
+    {board && (
+      <Button secondary icon={DropDownIcon} iconSize={10}>
+        Board
+      </Button>
+    )}
+    {sort && (
+      <Button secondary icon={SortIcon} iconSize={18}>
+        Shortest
+      </Button>
+    )}
   </ButtonsContainer>
 );
 
