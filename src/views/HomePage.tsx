@@ -92,10 +92,10 @@ const HomePage = (): JSX.Element => {
           <StyledInput placeholder="Search for notes..." icon={LoupeIcon} />
           <ButtonsContainer>
             <Button icon={AddIcon}>New Item</Button>
-            <Button icon={FilterIcon} iconSize={20}>
+            <Button secondary icon={FilterIcon} iconSize={18}>
               Filter
             </Button>
-            <Button icon={DropDownIcon} iconSize={10}>
+            <Button secondary icon={DropDownIcon} iconSize={10}>
               Board
             </Button>
           </ButtonsContainer>
