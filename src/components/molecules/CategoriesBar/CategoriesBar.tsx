@@ -36,18 +36,16 @@ const StyledAddButton = styled(Button)`
   }
 `;
 
-const CategoriesBar = (): JSX.Element => {
-  return (
-    <CategoriesContainer>
-      <CategoryButton active>All categories</CategoryButton>
-      <CategoryButton>Work</CategoryButton>
-      <CategoryButton>School</CategoryButton>
-      <CategoryButton>House</CategoryButton>
-      <StyledAddButton icon={AddIcon} iconSize={12} iconMargin={12} position="left">
-        Add Category
-      </StyledAddButton>
-    </CategoriesContainer>
-  );
-};
+const CategoriesBar = (): JSX.Element => (
+  <CategoriesContainer>
+    <CategoryButton active>All categories</CategoryButton>
+    <CategoryButton>Work</CategoryButton>
+    <CategoryButton>School</CategoryButton>
+    <CategoryButton>House</CategoryButton>
+    <StyledAddButton icon={AddIcon} iconSize={12} iconMargin={12} position="left">
+      Add Category
+    </StyledAddButton>
+  </CategoriesContainer>
+);
 
 export default CategoriesBar;
