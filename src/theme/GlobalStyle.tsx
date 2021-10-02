@@ -1,5 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
-import { THEME_TRANSITION_TIME, THEME_TRANSITION_CLASS } from 'app_constants';
+import {
+  THEME_TRANSITION_TIME,
+  THEME_TRANSITION_CLASS,
+  BOARDS_GRID_CLASS,
+  BOARDS_GRID_COLUMN_CLASS,
+} from 'app_constants';
 
 const GlobalStyle = createGlobalStyle`
   html.${THEME_TRANSITION_CLASS},
@@ -46,6 +51,18 @@ const GlobalStyle = createGlobalStyle`
 
   #root {
     height: 100%;
+  }
+
+  /* ---------- MASONRY LAYOUT ---------- */
+  .${BOARDS_GRID_CLASS} {
+    display: flex;
+    margin-left: -40px;
+    width: calc(100% + 40px);
+  }
+
+  .${BOARDS_GRID_COLUMN_CLASS} {
+    padding-left: 40px;
+    background-clip: padding-box;
   }
 `;
 

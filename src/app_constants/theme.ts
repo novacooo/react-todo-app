@@ -7,3 +7,5 @@ export const THEME_COLOR_BLUE = 'blue';
 export const THEME_COLOR_ORANGE = 'orange';
 export const THEME_COLOR_VIOLET = 'violet';
 export const TRANSITION_TIME = '0.2s';
+export const BOARDS_GRID_CLASS = 'boards-grid';
+export const BOARDS_GRID_COLUMN_CLASS = 'boards-grid-column';
