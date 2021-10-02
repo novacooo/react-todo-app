@@ -15,10 +15,12 @@ const Container = styled.div`
   width: 100%;
 
   @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    gap: 50px;
     padding: 114px 0;
   }
 
   @media (max-width: ${BP_MOBILE_MAX}) {
+    gap: 40px;
     padding: 94px 0;
   }
 `;
