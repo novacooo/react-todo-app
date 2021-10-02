@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { fontSettings } from 'theme/fontSettings';
 import { BP_MOBILE_MAX, TRANSITION_TIME } from 'app_constants';
 
@@ -6,8 +6,18 @@ interface IHeaderProps {
   active?: boolean;
 }
 
+export const activeHeaderStyle = css`
+  color: ${({ theme }) => theme.TEXT_PRIMARY};
+
+  &::before {
+    width: calc(100% + 20px);
+    background-color: ${({ theme }) => theme.MAIN};
+  }
+`;
+
 const Header = styled.h1<IHeaderProps>`
   position: relative;
+  margin-bottom: 9px;
   font-size: ${fontSettings.sizesDesktop.xxl};
   font-weight: ${fontSettings.weights.semiBold};
   color: ${({ theme, active }) => (active ? theme.TEXT_PRIMARY : theme.TEXT_SECONDARY)};

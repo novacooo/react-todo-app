@@ -34,6 +34,7 @@ const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 5;
   padding: 11px ${MARGIN_SIDE_DESKTOP};
   width: 100%;
   background-color: ${({ theme }) => theme.MAIN};
