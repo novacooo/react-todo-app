@@ -20,7 +20,7 @@ const Container = styled.div`
   }
 
   @media (max-width: ${BP_MOBILE_MAX}) {
-    gap: 40px;
+    gap: 30px;
     padding: 94px 0;
   }
 `;
@@ -29,7 +29,7 @@ const HomePage = (): JSX.Element => (
   <PageTemplate>
     <Container>
       <CategoriesBar showAddButton />
-      <MenuBar newItem filter board />
+      <MenuBar newItem filter board sort />
       <CategoryTemplate header="Work" />
     </Container>
   </PageTemplate>

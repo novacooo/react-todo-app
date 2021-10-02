@@ -22,6 +22,7 @@ const CategoryButton = styled.button<ICategoriesButtonProps>`
   font-weight: ${({ active }) =>
     active ? fontSettings.weights.semiBold : fontSettings.weights.medium};
   color: ${({ theme, active }) => (active ? theme.MAIN : theme.TEXT_PRIMARY)};
+  white-space: nowrap;
   transition: background-color ${TRANSITION_TIME};
 
   &:hover {

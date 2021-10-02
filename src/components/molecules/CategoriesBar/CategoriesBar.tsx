@@ -14,8 +14,22 @@ const CategoriesContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   gap: 10px;
+  width: 100%;
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    justify-content: flex-start;
+    padding: 0 25px;
+    width: 100vw;
+
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `;
 
 const StyledAddButton = styled(Button)`

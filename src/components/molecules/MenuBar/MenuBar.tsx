@@ -5,8 +5,6 @@ import MenuButtons, { IMenuButtonsProps } from '../MenuButtons/MenuButtons';
 import { ReactComponent as LoupeIcon } from 'assets/icons/loupe.svg';
 import { BP_MOBILE_MAX } from 'app_constants';
 
-// TODO: Add responsivity for menu
-
 const MenuContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -15,8 +13,8 @@ const MenuContainer = styled.div`
   width: 100%;
 
   @media (max-width: ${BP_MOBILE_MAX}) {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: column-reverse;
+    gap: 30px;
   }
 `;
 
