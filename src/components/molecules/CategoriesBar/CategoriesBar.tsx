@@ -4,23 +4,40 @@ import Button from 'components/atoms/Button/Button';
 import CategoryButton from 'components/atoms/CategoryButton/CategoryButton';
 import { ReactComponent as AddIcon } from 'assets/icons/add.svg';
 import { fontSettings } from 'theme/fontSettings';
-import { BP_MOBILE_MAX, BP_TABLET_MAX, BP_TABLET_MIN } from 'app_constants';
+import {
+  BP_MOBILE_MAX,
+  BP_TABLET_MAX,
+  BP_TABLET_MIN,
+  MARGIN_SIDE_MOBILE,
+  MARGIN_SIDE_TABLET,
+} from 'app_constants';
 
 interface ICategoriesBarProps {
   showAddButton?: boolean;
 }
 
-const CategoriesContainer = styled.div`
+const BarContainer = styled.div`
+  margin: 0 auto;
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    position: relative;
+    left: -${MARGIN_SIDE_MOBILE};
+    width: calc(100% + ${MARGIN_SIDE_MOBILE} + ${MARGIN_SIDE_MOBILE});
+  }
+`;
+
+const ButtonsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
   width: 100%;
 
   @media (max-width: ${BP_MOBILE_MAX}) {
-    justify-content: flex-start;
-    padding: 0 25px;
-    width: 100vw;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 0 ${MARGIN_SIDE_MOBILE};
 
     overflow-x: scroll;
     -ms-overflow-style: none;
@@ -55,17 +72,19 @@ const StyledAddButton = styled(Button)`
 `;
 
 const CategoriesBar = ({ showAddButton }: ICategoriesBarProps): JSX.Element => (
-  <CategoriesContainer>
-    <CategoryButton active>All categories</CategoryButton>
-    <CategoryButton>Work</CategoryButton>
-    <CategoryButton>School</CategoryButton>
-    <CategoryButton>House</CategoryButton>
-    {showAddButton && (
-      <StyledAddButton icon={AddIcon} iconSize={12} iconMargin={12} position="left">
-        Add Category
-      </StyledAddButton>
-    )}
-  </CategoriesContainer>
+  <BarContainer>
+    <ButtonsContainer>
+      <CategoryButton active>All categories</CategoryButton>
+      <CategoryButton>Work</CategoryButton>
+      <CategoryButton>School</CategoryButton>
+      <CategoryButton>House</CategoryButton>
+      {showAddButton && (
+        <StyledAddButton icon={AddIcon} iconSize={12} iconMargin={12} position="left">
+          Add Category
+        </StyledAddButton>
+      )}
+    </ButtonsContainer>
+  </BarContainer>
 );
 
 export default CategoriesBar;

@@ -20,6 +20,7 @@ const StyledParagraph = styled(Paragraph)`
   &:hover,
   &:focus {
     color: ${({ theme }) => theme.MAIN_HOVER};
+    text-decoration: underline;
   }
 `;
 
