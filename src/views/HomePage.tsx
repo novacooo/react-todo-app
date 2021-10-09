@@ -16,7 +16,7 @@ const Container = styled.div`
 
   @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
     gap: 50px;
-    padding: 114px 0;
+    padding: 124px 0;
   }
 
   @media (max-width: ${BP_MOBILE_MAX}) {

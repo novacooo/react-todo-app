@@ -15,7 +15,7 @@ const DarkContainer = styled.div<ISidebarProps>`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   height: 100%;
   background-color: ${({ theme }) => theme.BG_DARKEN};
@@ -30,7 +30,7 @@ const Container = styled.div<ISidebarProps>`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   padding: 30px;
   width: 80%;
   height: 100%;

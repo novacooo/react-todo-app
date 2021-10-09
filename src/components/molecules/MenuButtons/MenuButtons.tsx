@@ -1,16 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from 'components/atoms/Button/Button';
-import IconButton from 'components/atoms/IconButton/IconButton';
 import { ReactComponent as AddIcon } from 'assets/icons/add.svg';
 import { ReactComponent as FilterIcon } from 'assets/icons/filter.svg';
 import { ReactComponent as DropDownIcon } from 'assets/icons/drop_down.svg';
 import { ReactComponent as SortIcon } from 'assets/icons/sort.svg';
-import { BORDER_RADIUS, BP_MOBILE_MAX, TRANSITION_TIME } from 'app_constants';
-
-interface IStyledIconButtonProps {
-  accent?: boolean;
-}
+import { BP_MOBILE_MAX, BP_TABLET_MAX, BP_TABLET_MIN } from 'app_constants';
 
 export interface IMenuButtonsProps {
   newItem?: boolean;
@@ -21,70 +16,42 @@ export interface IMenuButtonsProps {
 
 const ButtonsContainer = styled.div`
   display: flex;
+  justify-content: center;
   gap: 20px;
+
+  @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
-const StyledButton = styled(Button)`
+const DesktopButton = styled(Button)`
   @media (max-width: ${BP_MOBILE_MAX}) {
     display: none;
   }
 `;
 
-// TODO: poprawić to wszystko bo to tylko prototyp
-
-const StyledIconButton = styled(IconButton)<IStyledIconButtonProps>`
-  display: none;
-  background-color: ${({ theme, accent }) => (accent ? theme.MAIN : theme.BG_SECONDARY)};
-  border: 2px solid ${({ theme, accent }) => (accent ? theme.MAIN : theme.BORDER)};
-  border-radius: ${BORDER_RADIUS};
-  transition: border-color ${TRANSITION_TIME}, background-color ${TRANSITION_TIME};
-
-  &:hover,
-  &:focus {
-    background-color: ${({ theme, accent }) => (accent ? theme.MAIN_HOVER : theme.BG_SECONDARY)};
-    border-color: ${({ theme, accent }) => (accent ? theme.MAIN_HOVER : theme.BORDER_HOVER)};
-  }
-
-  > svg {
-    fill: ${({ theme, accent }) => (accent ? theme.MAIN_ITEMS : theme.ICON_SECONDARY)};
-  }
-
-  @media (max-width: ${BP_MOBILE_MAX}) {
-    display: flex;
-  }
-`;
-
 const MenuButtons = ({ newItem, filter, board, sort }: IMenuButtonsProps): JSX.Element => (
   <ButtonsContainer>
-    {newItem && (
-      <>
-        <StyledButton icon={AddIcon}>New Item</StyledButton>
-        <StyledIconButton accent size={46} icon={AddIcon} iconSize={18} />
-      </>
-    )}
+    {newItem && <Button icon={AddIcon}>New Item</Button>}
     {filter && (
-      <>
-        <StyledButton secondary icon={FilterIcon} iconSize={18}>
-          Filter
-        </StyledButton>
-        <StyledIconButton size={46} icon={FilterIcon} iconSize={20} />
-      </>
+      <DesktopButton secondary icon={FilterIcon} iconSize={18}>
+        Filter
+      </DesktopButton>
     )}
     {board && (
-      <>
-        <StyledButton secondary icon={DropDownIcon} iconSize={10}>
-          Board
-        </StyledButton>
-        <StyledIconButton size={46} icon={DropDownIcon} iconSize={14} />
-      </>
+      <DesktopButton secondary icon={DropDownIcon} iconSize={10}>
+        Board
+      </DesktopButton>
     )}
     {sort && (
-      <>
-        <StyledButton secondary icon={SortIcon} iconSize={18}>
-          Shortest
-        </StyledButton>
-        <StyledIconButton size={46} icon={SortIcon} iconSize={18} />
-      </>
+      <DesktopButton secondary icon={SortIcon} iconSize={18}>
+        Shortest
+      </DesktopButton>
     )}
   </ButtonsContainer>
 );
