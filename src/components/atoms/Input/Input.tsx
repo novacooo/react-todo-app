@@ -68,6 +68,7 @@ const StyledInput = styled.input<IStyledInputProps>`
   font-size: ${fontSettings.sizesDesktop.m};
   font-weight: ${fontSettings.weights.medium};
   color: ${({ theme }) => theme.TEXT_PRIMARY};
+  text-overflow: ellipsis;
 
   &::placeholder {
     color: ${({ theme }) => theme.TEXT_SECONDARY};

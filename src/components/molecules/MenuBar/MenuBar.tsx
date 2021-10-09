@@ -40,16 +40,13 @@ const StyledInput = styled(Input)`
 
   @media (max-width: ${BP_MOBILE_MAX}) {
     max-width: none;
+    height: 44px;
   }
 `;
 
 const FilterButton = styled(Button)`
   @media (min-width: ${BP_TABLET_MIN}) {
     display: none;
-  }
-
-  @media (max-width: ${BP_MOBILE_MAX}) {
-    height: 48px;
   }
 `;
 
