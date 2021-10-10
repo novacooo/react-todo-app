@@ -5,6 +5,7 @@ import { BP_MOBILE_MAX, BP_TABLET_MAX, BP_TABLET_MIN } from 'app_constants';
 import CategoriesBar from 'components/molecules/CategoriesBar/CategoriesBar';
 import MenuBar from 'components/molecules/MenuBar/MenuBar';
 import CategoryTemplate from 'templates/CategoryTemplate';
+import BoardTemplate from 'templates/BoardTemplate';
 
 const Container = styled.div`
   display: flex;
@@ -29,8 +30,14 @@ const HomePage = (): JSX.Element => (
   <PageTemplate>
     <Container>
       <CategoriesBar showAddButton />
-      <MenuBar newItem filter board sort />
-      <CategoryTemplate header="Work" />
+      <MenuBar newItem filter board />
+      <CategoryTemplate header="Work">
+        <BoardTemplate name="Test" />
+        <BoardTemplate name="Test" />
+        <BoardTemplate name="Test" />
+        <BoardTemplate name="Test" />
+        <BoardTemplate name="Test" />
+      </CategoryTemplate>
     </Container>
   </PageTemplate>
 );

@@ -14,7 +14,6 @@ const BarContainer = styled.div`
   width: 100%;
 
   @media (max-width: ${BP_MOBILE_MAX}) {
-    padding: 0 ${MARGIN_SIDE_MOBILE};
     width: calc(100% + ${MARGIN_SIDE_MOBILE} + ${MARGIN_SIDE_MOBILE});
 
     overflow-x: scroll;
@@ -37,7 +36,7 @@ const ButtonsContainer = styled.div`
     justify-content: flex-start;
     flex-wrap: nowrap;
     margin: 0 auto;
-    padding-right: ${MARGIN_SIDE_MOBILE};
+    padding: 0 ${MARGIN_SIDE_MOBILE};
     width: max-content;
   }
 `;
