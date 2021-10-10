@@ -33,6 +33,7 @@ export interface IThemeType {
   BG_SECONDARY: string;
   BG_NOTE: string;
   BG_BADGE: string;
+  BG_BADGE_HOVER: string;
   BG_HOVER: string;
   BG_HOVER_MAIN: string;
   BG_DARKEN: string;

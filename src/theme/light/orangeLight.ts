@@ -17,6 +17,7 @@ const orangeLight: IThemeType = {
   BG_SECONDARY: 'hsl(0, 0%, 96%)',
   BG_NOTE: 'hsl(0, 0%, 100%)',
   BG_BADGE: 'hsl(0, 0%, 90%)',
+  BG_BADGE_HOVER: 'hsl(0, 0%, 85%)',
   BG_HOVER: 'hsla(0, 0%, 0%, 0.05)',
   BG_HOVER_MAIN: 'hsla(0, 0%, 100%, 0.15)',
   BG_DARKEN: 'hsla(0, 0%, 0%, 0.33)',

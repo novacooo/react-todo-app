@@ -34,9 +34,7 @@ const HomePage = (): JSX.Element => (
       <CategoriesBar showAddButton />
       <MenuBar newItem filter board />
       <CategoryTemplate header="Work">
-        <BoardTemplate name="Board name" count={3} />
-        <BoardTemplate name="Board name" count={3} />
-        <BoardTemplate name="Board name" count={3} />
+        <BoardTemplate name="Board name but larger" count={3} />
         <BoardTemplate name="Board name" count={3} />
         <BoardTemplate name="Board name" count={3} />
       </CategoryTemplate>

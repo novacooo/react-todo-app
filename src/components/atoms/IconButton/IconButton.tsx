@@ -16,12 +16,14 @@ interface IContainer {
 
 interface IIconProps {
   iconColor?: string;
+  scaleIcon?: boolean;
 }
 
 interface IIconButton extends IContainer, IIconProps {
   icon: React.FC;
   iconActive?: React.FC;
   iconSize?: number;
+  scaleIcon?: boolean;
   className?: string;
   onClick?: () => void;
 }
@@ -59,6 +61,7 @@ const IconButton = ({
   iconActive = icon,
   iconSize = 22,
   iconColor,
+  scaleIcon = true,
   hoverBackground,
   className,
   onClick,
@@ -69,13 +72,13 @@ const IconButton = ({
     fill: ${({ theme, iconColor }) => (iconColor ? iconColor : theme.MAIN_ITEMS)};
 
     @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
-      width: ${iconSize - 2}px;
-      height: ${iconSize - 2}px;
+      width: ${({ scaleIcon }) => (scaleIcon ? iconSize - 2 : iconSize)}px;
+      height: ${({ scaleIcon }) => (scaleIcon ? iconSize - 2 : iconSize)}px;
     }
 
     @media (max-width: ${BP_MOBILE_MAX}) {
-      width: ${iconSize - 3}px;
-      height: ${iconSize - 3}px;
+      width: ${({ scaleIcon }) => (scaleIcon ? iconSize - 3 : iconSize)}px;
+      height: ${({ scaleIcon }) => (scaleIcon ? iconSize - 3 : iconSize)}px;
     }
   `;
 
@@ -85,13 +88,13 @@ const IconButton = ({
     fill: ${({ theme, iconColor }) => (iconColor ? iconColor : theme.MAIN)};
 
     @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
-      width: ${iconSize - 2}px;
-      height: ${iconSize - 2}px;
+      width: ${({ scaleIcon }) => (scaleIcon ? iconSize - 2 : iconSize)}px;
+      height: ${({ scaleIcon }) => (scaleIcon ? iconSize - 2 : iconSize)}px;
     }
 
     @media (max-width: ${BP_MOBILE_MAX}) {
-      width: ${iconSize - 2}px;
-      height: ${iconSize - 2}px;
+      width: ${({ scaleIcon }) => (scaleIcon ? iconSize - 3 : iconSize)}px;
+      height: ${({ scaleIcon }) => (scaleIcon ? iconSize - 3 : iconSize)}px;
     }
   `;
 
@@ -106,7 +109,11 @@ const IconButton = ({
       size={size}
       active={active}
       hoverBackground={hoverBackground}>
-      {active ? <StyledIconActive iconColor={iconColor} /> : <StyledIcon iconColor={iconColor} />}
+      {active ? (
+        <StyledIconActive iconColor={iconColor} scaleIcon={scaleIcon} />
+      ) : (
+        <StyledIcon iconColor={iconColor} scaleIcon={scaleIcon} />
+      )}
     </Container>
   );
 };

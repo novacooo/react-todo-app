@@ -17,6 +17,7 @@ const blueDark: IThemeType = {
   BG_SECONDARY: 'hsl(0, 0%, 9%)',
   BG_NOTE: 'hsl(0, 0%, 10%)',
   BG_BADGE: 'hsl(0, 0%, 13%)',
+  BG_BADGE_HOVER: 'hsl(0, 0%, 18%)',
   BG_HOVER: 'hsla(0, 0%, 100%, 0.03)',
   BG_HOVER_MAIN: 'hsla(0, 0%, 0%, 0.1)',
   BG_DARKEN: 'hsla(0, 0%, 0%, 0.33)',
