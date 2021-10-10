@@ -26,6 +26,8 @@ const Container = styled.div`
   }
 `;
 
+// TODO: Add template for CategoryTemplate's
+
 const HomePage = (): JSX.Element => (
   <PageTemplate>
     <Container>
