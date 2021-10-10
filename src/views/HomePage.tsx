@@ -12,17 +12,17 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 60px;
-  padding: 134px 0 200px 0;
+  padding: 134px 0 160px 0;
   width: 100%;
 
   @media (min-width: ${BP_TABLET_MIN}) and (max-width: ${BP_TABLET_MAX}) {
     gap: 50px;
-    padding: 124px 0;
+    padding: 124px 0 150px 0;
   }
 
   @media (max-width: ${BP_MOBILE_MAX}) {
     gap: 30px;
-    padding: 94px 0;
+    padding: 94px 0 120px 0;
   }
 `;
 
@@ -32,11 +32,11 @@ const HomePage = (): JSX.Element => (
       <CategoriesBar showAddButton />
       <MenuBar newItem filter board />
       <CategoryTemplate header="Work">
-        <BoardTemplate name="Test" />
-        <BoardTemplate name="Test" />
-        <BoardTemplate name="Test" />
-        <BoardTemplate name="Test" />
-        <BoardTemplate name="Test" />
+        <BoardTemplate name="Board name" count={3} />
+        <BoardTemplate name="Board name" count={3} />
+        <BoardTemplate name="Board name" count={3} />
+        <BoardTemplate name="Board name" count={3} />
+        <BoardTemplate name="Board name" count={3} />
       </CategoryTemplate>
     </Container>
   </PageTemplate>

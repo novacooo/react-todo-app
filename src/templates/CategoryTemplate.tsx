@@ -21,6 +21,10 @@ const StyledContainer = styled.div`
   }
 `;
 
+const StyledHeader = styled(Header)`
+  margin-left: 20px;
+`;
+
 const CategoryTemplate = ({ header, children }: ICategoryTemplateProps): JSX.Element => {
   const columnBreakpoints = {
     default: 4,
@@ -31,7 +35,7 @@ const CategoryTemplate = ({ header, children }: ICategoryTemplateProps): JSX.Ele
 
   return (
     <StyledContainer>
-      <Header>{header}</Header>
+      <StyledHeader>{header}</StyledHeader>
       <Masonry
         breakpointCols={columnBreakpoints}
         className={BOARDS_GRID_CLASS}
