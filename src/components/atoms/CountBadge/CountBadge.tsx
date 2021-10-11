@@ -22,9 +22,13 @@ const StyledContainer = styled.div`
   }
 `;
 
+const StyledSmallHeader = styled(SmallHeader)`
+  color: ${({ theme }) => theme.TEXT_SECONDARY};
+`;
+
 const CountBadge = ({ count }: ICountBadgeProps): JSX.Element => (
   <StyledContainer>
-    <SmallHeader>{count}</SmallHeader>
+    <StyledSmallHeader>{count}</StyledSmallHeader>
   </StyledContainer>
 );
 

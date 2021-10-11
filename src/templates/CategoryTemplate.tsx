@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
 import Header, { activeHeaderStyle } from 'components/atoms/Header/Header';
-import { BOARDS_GRID_CLASS, BOARDS_GRID_COLUMN_CLASS } from 'app_constants';
+import { BOARDS_GRID_CLASS, BOARDS_GRID_COLUMN_CLASS, BP_TABLET_MIN } from 'app_constants';
 
 interface ICategoryTemplateProps {
   header: string;
@@ -22,7 +22,9 @@ const StyledContainer = styled.div`
 `;
 
 const StyledHeader = styled(Header)`
-  margin-left: 20px;
+  @media (min-width: ${BP_TABLET_MIN}) {
+    margin-left: 20px;
+  }
 `;
 
 const CategoryTemplate = ({ header, children }: ICategoryTemplateProps): JSX.Element => {

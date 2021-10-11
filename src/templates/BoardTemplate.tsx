@@ -4,8 +4,9 @@ import SmallHeader from 'components/atoms/SmallHeader/SmallHeader';
 import { BORDER_RADIUS } from 'app_constants';
 import CountBadge from 'components/atoms/CountBadge/CountBadge';
 import IconButton from 'components/atoms/IconButton/IconButton';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import { ReactComponent as AddIcon } from 'assets/icons/add.svg';
-import { ReactComponent as NoteIcon } from 'assets/icons/note.svg';
+import { ReactComponent as FolderIcon } from 'assets/icons/folder.svg';
 import { ReactComponent as DotsIcon } from 'assets/icons/dots.svg';
 import { useSelector } from 'react-redux';
 import { StateType } from 'state';
@@ -30,26 +31,31 @@ const BoardContainer = styled.div`
 const MenuContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-`;
-
-const ItemsContainer = styled.div`
-  display: flex;
-  align-items: center;
   gap: 10px;
-  min-width: 0;
 `;
 
 const HeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
   min-width: 0;
 `;
 
 const StyledSmallHeader = styled(SmallHeader)`
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  text-overflow: ellipsis;
+`;
+
+const ItemsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 10px;
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  gap: 10px;
 `;
 
 const StyledIconButton = styled(IconButton)`
@@ -63,15 +69,13 @@ const EmptyContainer = styled.div`
   gap: 25px;
 `;
 
-const EmptyIcon = styled(NoteIcon)`
-  margin: 20px 0;
+const EmptyIcon = styled(FolderIcon)`
   width: 60px;
   height: 60px;
   fill: ${({ theme }) => theme.ICON_SECONDARY};
 `;
 
-const EmptyText = styled.p`
-  color: ${({ theme }) => theme.TEXT_SECONDARY};
+const StyledParagraph = styled(Paragraph)`
   text-align: center;
 `;
 
@@ -81,29 +85,29 @@ const BoardTemplate = ({ name, count, children }: IBoardTemplateProps): JSX.Elem
   return (
     <BoardContainer>
       <MenuContainer>
+        <HeaderContainer>
+          <StyledSmallHeader>{name}</StyledSmallHeader>
+        </HeaderContainer>
         <ItemsContainer>
-          <HeaderContainer>
-            <StyledSmallHeader>{name}</StyledSmallHeader>
-          </HeaderContainer>
           <CountBadge count={count} />
-        </ItemsContainer>
-        <ItemsContainer>
-          <StyledIconButton
-            size={34}
-            icon={AddIcon}
-            iconSize={12}
-            iconColor={theme.ICON_PRIMARY}
-            scaleIcon={false}
-            hoverBackground={theme.BG_BADGE_HOVER}
-          />
-          <StyledIconButton
-            size={34}
-            icon={DotsIcon}
-            iconSize={14}
-            iconColor={theme.ICON_PRIMARY}
-            scaleIcon={false}
-            hoverBackground={theme.BG_BADGE_HOVER}
-          />
+          <ButtonsContainer>
+            <StyledIconButton
+              size={34}
+              icon={AddIcon}
+              iconSize={12}
+              iconColor={theme.ICON_PRIMARY}
+              scaleIcon={false}
+              hoverBackground={theme.BG_BADGE_HOVER}
+            />
+            <StyledIconButton
+              size={34}
+              icon={DotsIcon}
+              iconSize={14}
+              iconColor={theme.ICON_PRIMARY}
+              scaleIcon={false}
+              hoverBackground={theme.BG_BADGE_HOVER}
+            />
+          </ButtonsContainer>
         </ItemsContainer>
       </MenuContainer>
       {children ? (
@@ -111,7 +115,7 @@ const BoardTemplate = ({ name, count, children }: IBoardTemplateProps): JSX.Elem
       ) : (
         <EmptyContainer>
           <EmptyIcon />
-          <EmptyText>This board is empty. Add some notes!</EmptyText>
+          <StyledParagraph>This board is empty. Add some notes!</StyledParagraph>
         </EmptyContainer>
       )}
     </BoardContainer>
