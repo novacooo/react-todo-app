@@ -6,6 +6,7 @@ import CategoriesBar from 'components/molecules/CategoriesBar/CategoriesBar';
 import MenuBar from 'components/molecules/MenuBar/MenuBar';
 import CategoryTemplate from 'templates/CategoryTemplate';
 import BoardTemplate from 'templates/BoardTemplate';
+import Note from 'components/molecules/Note/Note';
 
 const Container = styled.div`
   display: flex;
@@ -34,9 +35,24 @@ const HomePage = (): JSX.Element => (
       <CategoriesBar showAddButton />
       <MenuBar newItem filter board />
       <CategoryTemplate header="Work">
-        <BoardTemplate name="Board name but larger" count={3} />
-        <BoardTemplate name="Board name" count={3} />
-        <BoardTemplate name="Board name" count={3} />
+        <BoardTemplate name="Board name" count={3}>
+          <Note />
+          <Note />
+          <Note />
+        </BoardTemplate>
+        <BoardTemplate name="Board name" count={1}>
+          <Note />
+        </BoardTemplate>
+        <BoardTemplate name="Board name" count={2}>
+          <Note />
+          <Note />
+        </BoardTemplate>
+        <BoardTemplate name="Board name" count={1}>
+          <Note />
+        </BoardTemplate>
+        <BoardTemplate name="Board name" count={0} />
+        <BoardTemplate name="Board name" count={0} />
+        <BoardTemplate name="Board name" count={0} />
       </CategoryTemplate>
     </Container>
   </PageTemplate>

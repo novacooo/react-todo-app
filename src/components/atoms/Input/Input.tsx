@@ -84,10 +84,6 @@ const StyledPasswordButton = styled(IconButton)`
   top: 50%;
   right: 10px;
   transform: translateY(-50%);
-
-  > svg {
-    fill: ${({ theme }) => theme.ICON_SECONDARY};
-  }
 `;
 
 const Input = ({
@@ -138,6 +134,7 @@ const Input = ({
           size={40}
           icon={actualType === 'password' ? ShowIcon : HideIcon}
           iconSize={20}
+          iconColor={theme.ICON_SECONDARY}
           hoverBackground={theme.BG_HOVER}
         />
       )}
