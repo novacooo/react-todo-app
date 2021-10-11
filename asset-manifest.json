@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/react-todo-app/static/js/main.b69443a4.chunk.js",
-    "main.js.map": "/react-todo-app/static/js/main.b69443a4.chunk.js.map",
+    "main.js": "/react-todo-app/static/js/main.21799d37.chunk.js",
+    "main.js.map": "/react-todo-app/static/js/main.21799d37.chunk.js.map",
     "runtime-main.js": "/react-todo-app/static/js/runtime-main.494ccf83.js",
     "runtime-main.js.map": "/react-todo-app/static/js/runtime-main.494ccf83.js.map",
-    "static/js/2.eae1729e.chunk.js": "/react-todo-app/static/js/2.eae1729e.chunk.js",
-    "static/js/2.eae1729e.chunk.js.map": "/react-todo-app/static/js/2.eae1729e.chunk.js.map",
+    "static/js/2.5138f056.chunk.js": "/react-todo-app/static/js/2.5138f056.chunk.js",
+    "static/js/2.5138f056.chunk.js.map": "/react-todo-app/static/js/2.5138f056.chunk.js.map",
     "index.html": "/react-todo-app/index.html",
-    "static/js/2.eae1729e.chunk.js.LICENSE.txt": "/react-todo-app/static/js/2.eae1729e.chunk.js.LICENSE.txt",
+    "static/js/2.5138f056.chunk.js.LICENSE.txt": "/react-todo-app/static/js/2.5138f056.chunk.js.LICENSE.txt",
     "static/media/add.525bcff8.svg": "/react-todo-app/static/media/add.525bcff8.svg",
     "static/media/app_logo.15089ea2.svg": "/react-todo-app/static/media/app_logo.15089ea2.svg",
     "static/media/arrow_right.af2b9b3b.svg": "/react-todo-app/static/media/arrow_right.af2b9b3b.svg",
@@ -25,6 +25,7 @@
     "static/media/email.6885510d.svg": "/react-todo-app/static/media/email.6885510d.svg",
     "static/media/facebook.84822c76.svg": "/react-todo-app/static/media/facebook.84822c76.svg",
     "static/media/filter.46e5df06.svg": "/react-todo-app/static/media/filter.46e5df06.svg",
+    "static/media/folder.548900f9.svg": "/react-todo-app/static/media/folder.548900f9.svg",
     "static/media/github.a6971cd8.svg": "/react-todo-app/static/media/github.a6971cd8.svg",
     "static/media/hamburger.803cc936.svg": "/react-todo-app/static/media/hamburger.803cc936.svg",
     "static/media/hide.7f0de5e2.svg": "/react-todo-app/static/media/hide.7f0de5e2.svg",
@@ -37,7 +38,6 @@
     "static/media/lock.ab03c5a9.svg": "/react-todo-app/static/media/lock.ab03c5a9.svg",
     "static/media/login.58687338.svg": "/react-todo-app/static/media/login.58687338.svg",
     "static/media/loupe.395fca3d.svg": "/react-todo-app/static/media/loupe.395fca3d.svg",
-    "static/media/note.7a81621c.svg": "/react-todo-app/static/media/note.7a81621c.svg",
     "static/media/novaco_logo.fc638bbb.svg": "/react-todo-app/static/media/novaco_logo.fc638bbb.svg",
     "static/media/palette.95980c6c.svg": "/react-todo-app/static/media/palette.95980c6c.svg",
     "static/media/show.61aa94a2.svg": "/react-todo-app/static/media/show.61aa94a2.svg",
@@ -49,7 +49,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.494ccf83.js",
-    "static/js/2.eae1729e.chunk.js",
-    "static/js/main.b69443a4.chunk.js"
+    "static/js/2.5138f056.chunk.js",
+    "static/js/main.21799d37.chunk.js"
   ]
 }
