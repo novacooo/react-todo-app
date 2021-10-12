@@ -4,6 +4,7 @@ import {
   THEME_TRANSITION_CLASS,
   BOARDS_GRID_CLASS,
   BOARDS_GRID_COLUMN_CLASS,
+  BP_MOBILE_MAX,
 } from 'app_constants';
 
 const GlobalStyle = createGlobalStyle`
@@ -58,11 +59,20 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     margin-left: -40px;
     width: calc(100% + 40px);
+
+    @media (max-width: ${BP_MOBILE_MAX}) {
+      margin-left: -30px;
+      width: calc(100% + 30px);
+    }
   }
 
   .${BOARDS_GRID_COLUMN_CLASS} {
     padding-left: 40px;
     background-clip: padding-box;
+
+    @media (max-width: ${BP_MOBILE_MAX}) {
+      padding-left: 30px;
+    }
   }
 `;
 

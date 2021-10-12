@@ -7,6 +7,7 @@ import CountBadge from 'components/atoms/CountBadge/CountBadge';
 import IconButton from 'components/atoms/IconButton/IconButton';
 import { ReactComponent as AddIcon } from 'assets/icons/add.svg';
 import { ReactComponent as DotsIcon } from 'assets/icons/dots.svg';
+import { BP_MOBILE_MAX } from 'app_constants';
 
 interface IBoardMenuProps {
   header: string;
@@ -17,6 +18,10 @@ const MenuContainer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 10px;
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    padding: 0 12.5px;
+  }
 `;
 
 const HeaderContainer = styled.div`

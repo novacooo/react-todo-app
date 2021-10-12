@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BORDER_RADIUS } from 'app_constants';
+import { BORDER_RADIUS, BP_MOBILE_MAX } from 'app_constants';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import { ReactComponent as FolderIcon } from 'assets/icons/folder.svg';
 import BoardMenu from 'components/molecules/BoardMenu/BoardMenu';
@@ -20,6 +20,12 @@ const BoardContainer = styled.div`
   width: 100%;
   background-color: ${({ theme }) => theme.BG_SECONDARY};
   border-radius: ${BORDER_RADIUS};
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 20px 12.5px;
+  }
 `;
 
 const EmptyContainer = styled.div`
