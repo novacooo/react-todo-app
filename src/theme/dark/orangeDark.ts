@@ -14,10 +14,10 @@ const orangeDark: IThemeType = {
   MAIN_PATTERN: 'hsl(29, 27%, 10%)',
 
   BG_PRIMARY: 'hsl(0, 0%, 7%)',
-  BG_SECONDARY: 'hsl(0, 0%, 10%)',
+  BG_SECONDARY: 'hsl(0, 0%, 9%)',
   BG_NOTE: 'hsl(0, 0%, 13%)',
-  BG_BADGE: 'hsl(0, 0%, 16%)',
-  BG_BADGE_HOVER: 'hsl(0, 0%, 21%)',
+  BG_BADGE: 'hsl(0, 0%, 15%)',
+  BG_BADGE_HOVER: 'hsl(0, 0%, 20%)',
   BG_HOVER: 'hsla(0, 0%, 100%, 0.05)',
   BG_HOVER_MAIN: 'hsla(0, 0%, 0%, 0.1)',
   BG_DARKEN: 'hsla(0, 0%, 0%, 0.33)',
