@@ -19,6 +19,10 @@ const Container = styled.div`
   background-color: ${({ theme }) => theme.BG_NOTE};
   border-radius: ${BORDER_RADIUS};
   box-shadow: ${({ theme }) => theme.NOTE_SHADOW};
+
+  @media (max-width: ${BP_MOBILE_MAX}) {
+    padding: 20px 17px 12px 17px;
+  }
 `;
 
 const TextsContainer = styled.div`
