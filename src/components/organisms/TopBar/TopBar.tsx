@@ -133,7 +133,7 @@ const TopBar = (): JSX.Element => {
   const { pathname } = useLocation();
   const [isShowedSidebar, setIsShowedSidebar] = useState(false);
 
-  const toggleSidebar = () => setIsShowedSidebar(!isShowedSidebar);
+  const toggleSidebar = () => setIsShowedSidebar((prevState) => !prevState);
 
   return (
     <>
@@ -143,21 +143,21 @@ const TopBar = (): JSX.Element => {
         <ButtonsContainer>
           <Link to={routes.home}>
             <IconButton
-              active={pathname === routes.home ? true : false}
+              active={pathname === routes.home}
               icon={HomeIcon}
               iconActive={HomeFilledIcon}
             />
           </Link>
           <Link to={routes.deadline}>
             <IconButton
-              active={pathname === routes.deadline ? true : false}
+              active={pathname === routes.deadline}
               icon={ClockIcon}
               iconActive={ClockFilledIcon}
             />
           </Link>
           <Link to={routes.done}>
             <IconButton
-              active={pathname === routes.done ? true : false}
+              active={pathname === routes.done}
               icon={DoneIcon}
               iconActive={DoneFilledIcon}
             />

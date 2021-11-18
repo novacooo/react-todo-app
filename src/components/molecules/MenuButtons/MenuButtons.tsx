@@ -12,6 +12,10 @@ export interface IMenuButtonsProps {
   filter?: boolean;
   board?: boolean;
   sort?: boolean;
+  onClickNewItem?: () => void;
+  onClickFilter?: () => void;
+  onClickBoard?: () => void;
+  onClickSort?: () => void;
 }
 
 const ButtonsContainer = styled.div`
@@ -35,25 +39,56 @@ const DesktopButton = styled(Button)`
   }
 `;
 
-const MenuButtons = ({ newItem, filter, board, sort }: IMenuButtonsProps): JSX.Element => (
-  <ButtonsContainer>
-    {newItem && <Button icon={AddIcon}>New Item</Button>}
-    {filter && (
-      <DesktopButton secondary icon={FilterIcon} iconSize={18}>
-        Filter
-      </DesktopButton>
-    )}
-    {board && (
-      <DesktopButton secondary icon={DropDownIcon} iconSize={10}>
-        Board
-      </DesktopButton>
-    )}
-    {sort && (
-      <DesktopButton secondary icon={SortIcon} iconSize={18}>
-        Shortest
-      </DesktopButton>
-    )}
-  </ButtonsContainer>
-);
+const MenuButtons = ({
+  newItem,
+  filter,
+  board,
+  sort,
+  onClickNewItem,
+  onClickFilter,
+  onClickBoard,
+  onClickSort,
+}: IMenuButtonsProps): JSX.Element => {
+  const handleOnClickItem = () => {
+    if (onClickNewItem) onClickNewItem();
+  };
+
+  const handleOnClickFilter = () => {
+    if (onClickFilter) onClickFilter();
+  };
+
+  const handleOnClickBoard = () => {
+    if (onClickBoard) onClickBoard();
+  };
+
+  const handleOnClickSort = () => {
+    if (onClickSort) onClickSort();
+  };
+
+  return (
+    <ButtonsContainer>
+      {newItem && (
+        <Button onClick={handleOnClickItem} icon={AddIcon}>
+          New Item
+        </Button>
+      )}
+      {filter && (
+        <DesktopButton onClick={handleOnClickFilter} secondary icon={FilterIcon} iconSize={18}>
+          Filter
+        </DesktopButton>
+      )}
+      {board && (
+        <DesktopButton onClick={handleOnClickBoard} secondary icon={DropDownIcon} iconSize={10}>
+          Board
+        </DesktopButton>
+      )}
+      {sort && (
+        <DesktopButton onClick={handleOnClickSort} secondary icon={SortIcon} iconSize={18}>
+          Shortest
+        </DesktopButton>
+      )}
+    </ButtonsContainer>
+  );
+};
 
 export default MenuButtons;
